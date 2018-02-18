@@ -12,7 +12,6 @@ var scenes;
 (function (scenes) {
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
-        //private _plane: objects.Plane;
         //private _island: objects.Island;
         //private _clouds: objects.Cloud[];
         // private _cloudNum: number;
@@ -28,7 +27,7 @@ var scenes;
         // Initialize Game Variables and objects
         PlayScene.prototype.Start = function () {
             this._background = new Levels.Level1();
-            //this._plane = new objects.Plane(this.assetManager);
+            this._player1 = new objects.P1Medium;
             //this._island = new objects.Island(this.assetManager);
             // instantiate the cloud array
             //this._clouds = new Array<objects.Cloud>();
@@ -41,7 +40,7 @@ var scenes;
         };
         PlayScene.prototype.Update = function () {
             this._background.Update();
-            //this._plane.Update();
+            this._player1.Update();
             //this._island.Update();
             //this._clouds.forEach(cloud => {
             // cloud.Update();
@@ -49,10 +48,10 @@ var scenes;
         };
         // This is where the fun happens
         PlayScene.prototype.Main = function () {
-            // add the ocean to the scene
+            // add the background to the scene
             this.addChild(this._background);
-            // add the island to the scene
-            //this.addChild(this._island);
+            // add the Player1 to the scene
+            this.addChild(this._player1);
             // add the plane to the scene
             //this.addChild(this._plane);
             // add clouds to the scene

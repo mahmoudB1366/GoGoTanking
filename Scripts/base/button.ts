@@ -1,4 +1,4 @@
-module objects {
+module base {
     export class Button extends createjs.Bitmap {
         // Private Instance Variables
 

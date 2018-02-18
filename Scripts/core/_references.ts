@@ -12,9 +12,8 @@
 /// <reference path="../../Scripts/scenes/play.ts"/>
 /// <reference path="../../Scripts/scenes/start.ts"/>
 
-/// <reference path="../../Scripts/objects/ocean.ts"/>
-/// <reference path="../../Scripts/objects/plane.ts"/>
-/// <reference path="../../Scripts/objects/island.ts"/>
-/// <reference path="../../Scripts/objects/cloud.ts"/>
+/// <reference path="../../Scripts/levels/level1.ts"/>
+/// <reference path="../../Scripts/objects/p1medium.ts"/>
+
 
 

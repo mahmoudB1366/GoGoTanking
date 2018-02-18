@@ -2,7 +2,7 @@ module scenes {
   export class PlayScene extends base.Scene {
     // Private Instance Variables
     private _background: Levels.Level1;
-    //private _plane: objects.Plane;
+    private _player1: base.Tank;
     //private _island: objects.Island;
     //private _clouds: objects.Cloud[];
    // private _cloudNum: number;
@@ -25,7 +25,7 @@ module scenes {
     // Initialize Game Variables and objects
     public Start(): void {
       this._background = new Levels.Level1();
-      //this._plane = new objects.Plane(this.assetManager);
+      this._player1 = new objects.P1Medium;
       //this._island = new objects.Island(this.assetManager);
 
       // instantiate the cloud array
@@ -41,7 +41,7 @@ module scenes {
 
     public Update(): void {
       this._background.Update();
-      //this._plane.Update();
+      this._player1.Update();
       //this._island.Update();
 
       //this._clouds.forEach(cloud => {
@@ -51,11 +51,11 @@ module scenes {
 
     // This is where the fun happens
     public Main(): void {
-      // add the ocean to the scene
+      // add the background to the scene
       this.addChild(this._background);
 
-      // add the island to the scene
-      //this.addChild(this._island);
+      // add the Player1 to the scene
+      this.addChild(this._player1);
 
       // add the plane to the scene
       //this.addChild(this._plane);

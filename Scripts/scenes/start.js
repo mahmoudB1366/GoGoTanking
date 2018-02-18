@@ -26,8 +26,8 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         StartScene.prototype.Start = function () {
-            this._welcomeLabel = new objects.Label("Welcome", "60px", "Consolas", "#000000", 320, 240, true);
-            this._startButton = new objects.Button(this.assetManager, "startButton", 320, 340);
+            this._welcomeLabel = new base.Label("Welcome", "60px", "Consolas", "#000000", 320, 240, true);
+            this._startButton = new base.Button(this.assetManager, "startButton", 320, 340);
             this.Main();
         };
         StartScene.prototype.Update = function () {

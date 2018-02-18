@@ -1,5 +1,5 @@
 module base {
-    export abstract class Tank extends createjs.Bitmap {
+    export class Tank extends createjs.Bitmap {
       // private instance variables
       protected _dx: number;
       protected _dy: number;

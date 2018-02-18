@@ -8,8 +8,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var objects;
-(function (objects) {
+var base;
+(function (base) {
     var GameObject = /** @class */ (function (_super) {
         __extends(GameObject, _super);
         // constructors
@@ -41,6 +41,6 @@ var objects;
         };
         return GameObject;
     }(createjs.Bitmap));
-    objects.GameObject = GameObject;
-})(objects || (objects = {}));
+    base.GameObject = GameObject;
+})(base || (base = {}));
 //# sourceMappingURL=gameobject.js.map

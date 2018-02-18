@@ -6,8 +6,8 @@
   // Game Variables
   let canvas = document.getElementById("canvas");
   let stage:createjs.Stage;
-  let helloLabel: objects.Label;
-  let clickMeButton: objects.Button;
+  let helloLabel: base.Label;
+  let clickMeButton: base.Button;
   let assetManifest: any[];
   let currentScene: base.Scene;
   let currentState: number;

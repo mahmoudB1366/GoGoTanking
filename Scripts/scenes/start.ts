@@ -1,8 +1,8 @@
 module scenes {
   export class StartScene extends base.Scene {
     // Private Instance Variables
-    private _welcomeLabel: objects.Label;
-    private _startButton: objects.Button;
+    private _welcomeLabel: base.Label;
+    private _startButton: base.Button;
 
     // Public Properties
 
@@ -23,8 +23,8 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
-      this._welcomeLabel = new objects.Label("Welcome", "60px", "Consolas", "#000000", 320, 240, true);
-      this._startButton = new objects.Button(this.assetManager, "startButton", 320, 340);
+      this._welcomeLabel = new base.Label("Welcome", "60px", "Consolas", "#000000", 320, 240, true);
+      this._startButton = new base.Button(this.assetManager, "startButton", 320, 340);
       this.Main();
     }
 
