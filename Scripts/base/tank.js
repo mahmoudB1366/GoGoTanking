@@ -14,7 +14,7 @@ var base;
         __extends(Tank, _super);
         // constructors
         function Tank(imageString) {
-            var _this = _super.call(this, core.GameManager.assetManager.getResult(imageString)) || this;
+            var _this = _super.call(this, Core.GameManager.assetManager.getResult(imageString)) || this;
             _this.name = imageString;
             _this._initialize();
             return _this;

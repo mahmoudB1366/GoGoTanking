@@ -15,7 +15,7 @@ var base;
         // Constructor
         function Scene() {
             var _this = _super.call(this) || this;
-            _this.assetManager = core.GameManager.assetManager;
+            _this.assetManager = Core.GameManager.assetManager;
             return _this;
         }
         // Private Methods

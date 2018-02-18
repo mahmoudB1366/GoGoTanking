@@ -1,7 +1,7 @@
 module scenes {
   export class PlayScene extends base.Scene {
     // Private Instance Variables
-    //private _ocean: objects.Ocean;
+    private _background: Levels.Level1;
     //private _plane: objects.Plane;
     //private _island: objects.Island;
     //private _clouds: objects.Cloud[];
@@ -24,7 +24,7 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
-      //this._ocean = new objects.Ocean(this.assetManager);
+      this._background = new Levels.Level1();
       //this._plane = new objects.Plane(this.assetManager);
       //this._island = new objects.Island(this.assetManager);
 
@@ -40,7 +40,7 @@ module scenes {
     }
 
     public Update(): void {
-      //this._ocean.Update();
+      this._background.Update();
       //this._plane.Update();
       //this._island.Update();
 
@@ -52,7 +52,7 @@ module scenes {
     // This is where the fun happens
     public Main(): void {
       // add the ocean to the scene
-      //this.addChild(this._ocean);
+      this.addChild(this._background);
 
       // add the island to the scene
       //this.addChild(this._island);

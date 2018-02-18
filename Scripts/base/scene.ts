@@ -9,7 +9,7 @@ module base {
     constructor() {
       super();
 
-      this.assetManager = core.GameManager.assetManager;
+      this.assetManager = Core.GameManager.assetManager;
     }
     // Private Methods
 

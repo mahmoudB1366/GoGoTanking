@@ -14,7 +14,7 @@ module base {
   
       // constructors
       constructor(imageString:string) {
-        super(core.GameManager.assetManager.getResult(imageString));
+        super(Core.GameManager.assetManager.getResult(imageString));
         this.name = imageString;
         this._initialize();
     }

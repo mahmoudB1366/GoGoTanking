@@ -1,10 +1,10 @@
-var core;
-(function (core) {
+var Core;
+(function (Core) {
     var GameManager = /** @class */ (function () {
         function GameManager() {
         }
         return GameManager;
     }());
-    core.GameManager = GameManager;
-})(core || (core = {}));
+    Core.GameManager = GameManager;
+})(Core || (Core = {}));
 //# sourceMappingURL=gameManager.js.map

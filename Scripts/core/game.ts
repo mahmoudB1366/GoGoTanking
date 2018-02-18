@@ -17,19 +17,22 @@
     {id: "startButton", src:"./Assets/images/startButton.png"},
     {id: "nextButton", src:"./Assets/images/nextButton.png"},
     {id: "backButton", src:"./Assets/images/backButton.png"},
-    {id: "ocean", src:"./Assets/images/ocean.gif"},
-    {id: "plane", src:"./Assets/images/plane.png"},
-    {id: "island", src:"./Assets/images/island.png"},
-    {id: "cloud", src:"./Assets/images/cloud.png"}
+    {id: "p1heavy", src:"./Assets/images/p1heavy.png"},
+    {id: "p1medium", src:"./Assets/images/p1medium.png"},
+    {id: "p1light", src:"./Assets/images/p1light.png"},
+    {id: "p2heavy", src:"./Assets/images/p2heavy.png"},
+    {id: "p2medium", src:"./Assets/images/p2medium.png"},
+    {id: "p2light", src:"./Assets/images/p2light.png"},
+    {id: "bg1", src:"./Assets/images/bg1.png"}
   ];
 
   // preloads assets
   function Init():void {
     console.log("Initialization Started...");
-    core.GameManager.assetManager = new createjs.LoadQueue(); // creates the assetManager object
-    core.GameManager.assetManager.installPlugin(createjs.Sound); // asset manager can also load sounds
-    core.GameManager.assetManager.loadManifest(assetManifest);
-    core.GameManager.assetManager.on("complete", Start, this);
+    Core.GameManager.assetManager = new createjs.LoadQueue(); // creates the assetManager object
+    Core.GameManager.assetManager.installPlugin(createjs.Sound); // asset manager can also load sounds
+    Core.GameManager.assetManager.loadManifest(assetManifest);
+    Core.GameManager.assetManager.on("complete", Start, this);
   }
 
   function Start():void {
@@ -40,8 +43,8 @@
     createjs.Ticker.framerate = 60; // 60 FPS
     createjs.Ticker.on("tick", Update);
 
-    core.GameManager.stage = stage;
-    core.GameManager.currentScene = config.Scene.START;
+    Core.GameManager.stage = stage;
+    Core.GameManager.currentScene = config.Scene.START;
     currentState = config.Scene.START;
     Main();
   }
@@ -49,7 +52,7 @@
   function Update():void {
     // if the scene that is playing returns another current scene
     // then call Main again and switch the scene
-    if(currentState!= core.GameManager.currentScene) {
+    if(currentState!= Core.GameManager.currentScene) {
       Main();
     }
 
@@ -61,7 +64,7 @@
   function Main():void {
     stage.removeAllChildren();
 
-    switch(core.GameManager.currentScene) {
+    switch(Core.GameManager.currentScene) {
       case config.Scene.START:
         currentScene = new scenes.StartScene();
       break;
@@ -73,7 +76,7 @@
       break;
     }
 
-    currentState = core.GameManager.currentScene;
+    currentState = Core.GameManager.currentScene;
     stage.addChild(currentScene);
   }
 
