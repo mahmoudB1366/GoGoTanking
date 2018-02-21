@@ -8,8 +8,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var objects;
-(function (objects) {
+var base;
+(function (base) {
     var Bullet = /** @class */ (function (_super) {
         __extends(Bullet, _super);
         // constructors
@@ -42,9 +42,11 @@ var objects;
         };
         Bullet.prototype.Update = function () {
             this.Move();
+            this.IsColliding();
             //
         };
-        Bullet.prototype.Reset = function () {
+        Bullet.prototype.IsColliding = function () {
+            return "";
         };
         Bullet.prototype.IsOut = function () {
             //right boundary
@@ -80,6 +82,6 @@ var objects;
         };
         return Bullet;
     }(createjs.Bitmap));
-    objects.Bullet = Bullet;
-})(objects || (objects = {}));
+    base.Bullet = Bullet;
+})(base || (base = {}));
 //# sourceMappingURL=bullet.js.map

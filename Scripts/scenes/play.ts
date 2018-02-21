@@ -3,6 +3,7 @@ module scenes {
     // Private Instance Variables
     private _background: Levels.Level1;
     public _player1: base.Tank;
+    public _player2: base.Tank;
     //private _island: objects.Island;
     //private _clouds: objects.Cloud[];
    // private _cloudNum: number;
@@ -26,23 +27,38 @@ module scenes {
     public Start(): void {
       this._background = new Levels.Level1();
       this._player1 = new objects.P1Medium();
+      this._player2 = new objects.P2Heavy();
       
-      //this._island = new objects.Island(this.assetManager);
 
-      // instantiate the cloud array
-      //this._clouds = new Array<objects.Cloud>();
-      //this._cloudNum = 3;
-      // loop and add each cloud to the array
-      //for (let count = 0; count < this._cloudNum; count++) {
-        //this._clouds[count] = new objects.Cloud(this.assetManager);
-      //}
 
       this.Main();
     }
 
     public Update(): void {
       this._background.Update();
-      this._player1.Update();
+      
+      if (this._player1 !=null)
+      {
+        this._player1.Update();
+        if (Core.GameManager.P1Health == 0)
+        {
+          this.removeChild(this._player1);
+          this._player1 = null;
+
+        }
+      }
+      
+      
+      if (this._player2 !=null)
+      {
+        this._player2.Update();
+        if (Core.GameManager.P2Health == 0)
+        {
+          this.removeChild(this._player2);
+          this._player2 = null;
+
+        }
+      }
       
       //this._island.Update();
 
@@ -56,17 +72,11 @@ module scenes {
       // add the background to the scene
       this.addChild(this._background);
 
-      // add the Player1 to the scene
+      // add the Players to the scene
       this.addChild(this._player1);
+      this.addChild(this._player2);
+      Core.GameManager.playScene = this;
 
-      // add the plane to the scene
-      //this.addChild(this._plane);
-
-      // add clouds to the scene
-
-      //this._clouds.forEach(cloud => {
-       // this.addChild(cloud);
-     // });
     }
 
 

@@ -30,6 +30,7 @@ var objects;
             this._bulletRange = Core.GameManager.M_bullet_range;
             this._bulletPower = Core.GameManager.M_bullet_power;
             this._tankLife = 100;
+            Core.GameManager.P1Health = 100;
         };
         //set Controllers
         P1Medium.prototype.setController = function () {
@@ -48,6 +49,10 @@ var objects;
         // updates the game object every frame
         P1Medium.prototype.Update = function () {
             _super.prototype.Update.call(this);
+        };
+        P1Medium.prototype.fire = function () {
+            this._bullet = new objects.Bullet1(this.x, this.y, this.rotation, this._bulletSpeed, this._bulletRange, this._bulletPower);
+            this.parent.addChild(this._bullet);
         };
         return P1Medium;
     }(base.Tank));

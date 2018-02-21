@@ -67,6 +67,10 @@ module base {
       public Reset():void {
   
       }
+      protected fire():void
+      {
+
+      }
   
       public CheckBounds():void {
         //right boundary
@@ -99,31 +103,32 @@ module base {
           case this._left:
             this.x-=this._tankSpeed;
             this.rotation = -90;
-            
+            Core.GameManager.KeyboardEvent = null;
           break;
           case this._right:
             this.x+=this._tankSpeed;
             this.rotation = +90;
+            Core.GameManager.KeyboardEvent = null;
           break;
           case this._down:
             this.y+=this._tankSpeed;
             this.rotation = 180;
+            Core.GameManager.KeyboardEvent = null;
           break;
           case this._up:
           this.y-=this._tankSpeed;
           this.rotation = 0;
+          Core.GameManager.KeyboardEvent = null;
         break;
         case this._fire:
         if (this._bullet == null)
         {
-          this._bullet = new objects.Bullet(this.x,this.y,this.rotation,
-            this._bulletSpeed,this._bulletRange,this._bulletPower);
-            this.parent.addChild(this._bullet);
+this.fire();
         }
-
+        Core.GameManager.KeyboardEvent = null;
       break;
         }
-          Core.GameManager.KeyboardEvent = null;
+          
         }
       }
 

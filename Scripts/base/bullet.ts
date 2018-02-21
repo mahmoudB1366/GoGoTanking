@@ -1,5 +1,5 @@
-module objects {
-    export class Bullet extends createjs.Bitmap {
+module base {
+    export abstract class Bullet extends createjs.Bitmap {
       // private instance variables
       private _range: number;
       private _speed: number;
@@ -7,6 +7,9 @@ module objects {
       private _initX: number;
       private _initY: number;
       private _angel : number;
+
+      protected _enemy : string;
+      protected _enemyTank : base.Tank;
 
       // public properties
       public Width: number;
@@ -53,11 +56,12 @@ module objects {
       public Update(): void {
         
         this.Move();
+        this.IsColliding();
         //
       }
   
-      public Reset():void {
-  
+      protected IsColliding():string {
+  return "";
       }
   
       public IsOut():boolean {
