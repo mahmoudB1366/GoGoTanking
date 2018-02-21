@@ -23,6 +23,7 @@ var objects;
             return _this;
         }
         // private methods
+        //set Tank Properties
         P1Medium.prototype.setTankProperties = function () {
             this._tankSpeed = Core.GameManager.M_tank_speed;
             this._bulletSpeed = Core.GameManager.M_bullet_speed;
@@ -30,6 +31,7 @@ var objects;
             this._bulletPower = Core.GameManager.M_bullet_power;
             this._tankLife = 100;
         };
+        //set Controllers
         P1Medium.prototype.setController = function () {
             this._left = Core.GameManager.P1_LEFT;
             this._right = Core.GameManager.P1_RIGHT;
@@ -45,23 +47,6 @@ var objects;
         // updates the game object every frame
         P1Medium.prototype.Update = function () {
             _super.prototype.Update.call(this);
-            //this.Move();
-            //this.CheckBounds();
-        };
-        // reset the objects location to some value
-        P1Medium.prototype.Reset = function () {
-        };
-        // move the object to some new location
-        // check to see if some boundary has been passed
-        P1Medium.prototype.CheckBounds = function () {
-            // right boundary
-            if (this.x >= 640 - this.HalfWidth) {
-                this.x = 640 - this.HalfWidth;
-            }
-            // left boundary
-            if (this.x <= this.HalfWidth) {
-                this.x = this.HalfWidth;
-            }
         };
         return P1Medium;
     }(base.Tank));

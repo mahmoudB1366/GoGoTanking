@@ -49,6 +49,7 @@ module base {
         
         this._keyboardEvent = Core.GameManager.KeyboardEvent;
         this.Move();
+        this.CheckBounds();
       }
   
       public Reset():void {
@@ -56,7 +57,26 @@ module base {
       }
   
       public CheckBounds():void {
+        //right boundary
+        if(this.x >= 640 - this.HalfWidth) {
+          this.x = 640 - this.HalfWidth;
+        }
   
+        // left boundary
+        if(this.x <= this.HalfWidth) {
+          this.x = this.HalfWidth;
+        }
+        // up boundary
+        if(this.y <= this.HalfHeight) {
+          this.y = this.HalfHeight;
+        }
+        // down boundary
+        if(this.y >= 480 - this.HalfHeight) {
+          this.y = 480 - this.HalfHeight;
+        }
+        
+        
+
       }
   
       public Move():void {

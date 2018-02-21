@@ -35,10 +35,27 @@ var base;
         Tank.prototype.Update = function () {
             this._keyboardEvent = Core.GameManager.KeyboardEvent;
             this.Move();
+            this.CheckBounds();
         };
         Tank.prototype.Reset = function () {
         };
         Tank.prototype.CheckBounds = function () {
+            //right boundary
+            if (this.x >= 640 - this.HalfWidth) {
+                this.x = 640 - this.HalfWidth;
+            }
+            // left boundary
+            if (this.x <= this.HalfWidth) {
+                this.x = this.HalfWidth;
+            }
+            // up boundary
+            if (this.y <= this.HalfHeight) {
+                this.y = this.HalfHeight;
+            }
+            // down boundary
+            if (this.y >= 480 - this.HalfHeight) {
+                this.y = 480 - this.HalfHeight;
+            }
         };
         Tank.prototype.Move = function () {
             if (this._keyboardEvent != null) {
