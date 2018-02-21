@@ -27,17 +27,41 @@ var base;
             this.HalfHeight = this.Height * 0.5;
             this.regX = this.HalfWidth;
             this.regY = this.HalfHeight;
+            this.Start();
         };
         // public methods
         Tank.prototype.Start = function () {
         };
         Tank.prototype.Update = function () {
+            this._keyboardEvent = Core.GameManager.KeyboardEvent;
+            this.Move();
         };
         Tank.prototype.Reset = function () {
         };
         Tank.prototype.CheckBounds = function () {
         };
         Tank.prototype.Move = function () {
+            if (this._keyboardEvent != null) {
+                switch (this._keyboardEvent.key) {
+                    case this._left:
+                        this.x -= this._tankSpeed;
+                        this.rotation = -90;
+                        break;
+                    case this._right:
+                        this.x += this._tankSpeed;
+                        this.rotation = +90;
+                        break;
+                    case this._down:
+                        this.y += this._tankSpeed;
+                        this.rotation = 180;
+                        break;
+                    case this._up:
+                        this.y -= this._tankSpeed;
+                        this.rotation = 0;
+                        break;
+                }
+                Core.GameManager.KeyboardEvent = null;
+            }
         };
         return Tank;
     }(createjs.Bitmap));

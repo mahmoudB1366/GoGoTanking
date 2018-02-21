@@ -39,6 +39,8 @@
         Core.GameManager.stage = stage;
         Core.GameManager.currentScene = config.Scene.START;
         currentState = config.Scene.START;
+        document.addEventListener('keydown', DetectKey);
+        console.log("Listening to Keyboad...");
         Main();
     }
     function Update() {
@@ -65,6 +67,9 @@
         }
         currentState = Core.GameManager.currentScene;
         stage.addChild(currentScene);
+    }
+    function DetectKey(event) {
+        Core.GameManager.KeyboardEvent = event;
     }
     window.onload = Init;
 })();

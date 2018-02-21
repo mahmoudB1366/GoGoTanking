@@ -27,7 +27,7 @@ var scenes;
         // Initialize Game Variables and objects
         PlayScene.prototype.Start = function () {
             this._background = new Levels.Level1();
-            this._player1 = new objects.P1Medium;
+            this._player1 = new objects.P1Medium();
             //this._island = new objects.Island(this.assetManager);
             // instantiate the cloud array
             //this._clouds = new Array<objects.Cloud>();

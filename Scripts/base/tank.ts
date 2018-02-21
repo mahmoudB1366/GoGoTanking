@@ -1,8 +1,18 @@
 module base {
-    export class Tank extends createjs.Bitmap {
+    export abstract class Tank extends createjs.Bitmap {
       // private instance variables
-      protected _dx: number;
-      protected _dy: number;
+      protected _keyboardEvent: KeyboardEvent; 
+
+      protected _tankSpeed: number;
+      protected _tankLife: number;
+      protected _bulletRange: number;
+      protected _bulletSpeed: number;
+      protected _bulletPower: number;
+
+     protected _left :string;
+     protected _right :string;
+     protected _up :string;
+     protected _down :string;
   
       // public properties
       public Width: number;
@@ -10,6 +20,7 @@ module base {
       public HalfWidth: number;
       public HalfHeight: number;
       public LayerIndex : number;
+      
       
   
       // constructors
@@ -26,15 +37,18 @@ module base {
         this.HalfHeight = this.Height * 0.5;
         this.regX = this.HalfWidth;
         this.regY = this.HalfHeight;
+        this.Start();
       }
   
       // public methods
       public Start(): void {
-  
+
       }
   
       public Update(): void {
-  
+        
+        this._keyboardEvent = Core.GameManager.KeyboardEvent;
+        this.Move();
       }
   
       public Reset():void {
@@ -46,8 +60,32 @@ module base {
       }
   
       public Move():void {
-  
+        
+        if (this._keyboardEvent !=null)
+        {       
+         switch(this._keyboardEvent.key) {
+          case this._left:
+            this.x-=this._tankSpeed;
+            this.rotation = -90;
+            
+          break;
+          case this._right:
+            this.x+=this._tankSpeed;
+            this.rotation = +90;
+          break;
+          case this._down:
+            this.y+=this._tankSpeed;
+            this.rotation = 180;
+          break;
+          case this._up:
+          this.y-=this._tankSpeed;
+          this.rotation = 0;
+        break;
+        }
+          Core.GameManager.KeyboardEvent = null;
+        }
       }
+
     }
   }
   

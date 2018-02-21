@@ -17,10 +17,25 @@ var objects;
         // Constructor
         function P1Medium() {
             var _this = _super.call(this, "p1medium") || this;
+            _this.setTankProperties();
+            _this.setController();
             _this.Start();
             return _this;
         }
         // private methods
+        P1Medium.prototype.setTankProperties = function () {
+            this._tankSpeed = Core.GameManager.M_tank_speed;
+            this._bulletSpeed = Core.GameManager.M_bullet_speed;
+            this._bulletRange = Core.GameManager.M_bullet_range;
+            this._bulletPower = Core.GameManager.M_bullet_power;
+            this._tankLife = 100;
+        };
+        P1Medium.prototype.setController = function () {
+            this._left = Core.GameManager.P1_LEFT;
+            this._right = Core.GameManager.P1_RIGHT;
+            this._up = Core.GameManager.P1_UP;
+            this._down = Core.GameManager.P1_DOWN;
+        };
         // public methods
         // Initializes variables and creates new objects
         P1Medium.prototype.Start = function () {
@@ -29,16 +44,14 @@ var objects;
         };
         // updates the game object every frame
         P1Medium.prototype.Update = function () {
-            this.Move();
+            _super.prototype.Update.call(this);
+            //this.Move();
             //this.CheckBounds();
         };
         // reset the objects location to some value
         P1Medium.prototype.Reset = function () {
         };
         // move the object to some new location
-        P1Medium.prototype.Move = function () {
-            this.x = Core.GameManager.stage.mouseX;
-        };
         // check to see if some boundary has been passed
         P1Medium.prototype.CheckBounds = function () {
             // right boundary

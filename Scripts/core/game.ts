@@ -36,8 +36,7 @@
   }
 
   function Start():void {
-    console.log("Starting Application...")
-
+    console.log("Starting Application...");
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); // turn this on for buttons
     createjs.Ticker.framerate = 60; // 60 FPS
@@ -46,6 +45,9 @@
     Core.GameManager.stage = stage;
     Core.GameManager.currentScene = config.Scene.START;
     currentState = config.Scene.START;
+
+    document.addEventListener('keydown', DetectKey);
+    console.log("Listening to Keyboad...");
     Main();
   }
 
@@ -79,7 +81,9 @@
     currentState = Core.GameManager.currentScene;
     stage.addChild(currentScene);
   }
-
+  function DetectKey(event: KeyboardEvent):void{
+    Core.GameManager.KeyboardEvent = event;
+  }
   window.onload = Init;
 
 })();
