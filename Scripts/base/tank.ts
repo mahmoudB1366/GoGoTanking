@@ -13,6 +13,9 @@ module base {
      protected _right :string;
      protected _up :string;
      protected _down :string;
+     protected _fire :string;
+
+     protected  _bullet :objects.Bullet;
   
       // public properties
       public Width: number;
@@ -50,6 +53,15 @@ module base {
         this._keyboardEvent = Core.GameManager.KeyboardEvent;
         this.Move();
         this.CheckBounds();
+
+        if (this._bullet != null)
+        {
+          this._bullet.Update();
+          if (this._bullet.IsOut())
+          {
+            this._bullet = null;
+          }
+        }
       }
   
       public Reset():void {
@@ -101,6 +113,15 @@ module base {
           this.y-=this._tankSpeed;
           this.rotation = 0;
         break;
+        case this._fire:
+        if (this._bullet == null)
+        {
+          this._bullet = new objects.Bullet(this.x,this.y,this.rotation,
+            this._bulletSpeed,this._bulletRange,this._bulletPower);
+            this.parent.addChild(this._bullet);
+        }
+
+      break;
         }
           Core.GameManager.KeyboardEvent = null;
         }

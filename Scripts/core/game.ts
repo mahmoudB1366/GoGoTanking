@@ -23,6 +23,7 @@
     {id: "p2heavy", src:"./Assets/images/p2heavy.png"},
     {id: "p2medium", src:"./Assets/images/p2medium.png"},
     {id: "p2light", src:"./Assets/images/p2light.png"},
+    {id: "bullet", src:"./Assets/images/bullet.png"},
     {id: "bg1", src:"./Assets/images/bg1.png"}
   ];
 

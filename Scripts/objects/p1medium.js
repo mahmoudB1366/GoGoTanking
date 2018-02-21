@@ -37,6 +37,7 @@ var objects;
             this._right = Core.GameManager.P1_RIGHT;
             this._up = Core.GameManager.P1_UP;
             this._down = Core.GameManager.P1_DOWN;
+            this._fire = Core.GameManager.P1_FIRE;
         };
         // public methods
         // Initializes variables and creates new objects

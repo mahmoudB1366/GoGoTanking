@@ -13,7 +13,7 @@ module Core {
 
       public static M_tank_speed = 1.5;
       public static M_bullet_range = 1.5;
-      public static M_bullet_speed = 1.5;
+      public static M_bullet_speed = 3;
       public static M_bullet_power = 1.5;
 
       public static L_tank_speed = 1.5;
@@ -26,5 +26,6 @@ module Core {
       public static P1_RIGHT = 'd';
       public static P1_UP = 'w';
       public static P1_DOWN = 's';
+      public static P1_FIRE = 'm';
     }
   }

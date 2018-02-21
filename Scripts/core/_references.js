@@ -10,4 +10,5 @@
 /// <reference path="../../Scripts/scenes/start.ts"/>
 /// <reference path="../../Scripts/levels/level1.ts"/>
 /// <reference path="../../Scripts/objects/p1medium.ts"/>
+/// <reference path="../../Scripts/objects/bullet.ts"/>
 //# sourceMappingURL=_references.js.map
