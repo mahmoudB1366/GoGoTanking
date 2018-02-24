@@ -31,7 +31,7 @@ var scenes;
         StartScene.prototype._setPlayerSelection = function (eventObject) {
             switch (eventObject.target.name) {
                 case "p1heavy":
-                    Core.GameManager.Player1TankType = config.tankTypes.HEAVY;
+                    Core.GameManager.Player1TankType = config.tankTypes.HEAVY; //GOOD
                     //(this.getChildAt(0) as base.Button).setCoordination(100,200);
                     break;
                 case "p1medium":

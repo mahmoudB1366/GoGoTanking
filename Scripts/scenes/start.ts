@@ -39,7 +39,7 @@ module scenes {
     private _setPlayerSelection(eventObject:MouseEvent):void {
       switch(eventObject.target.name) {
         case "p1heavy":
-        Core.GameManager.Player1TankType = config.tankTypes.HEAVY;
+        Core.GameManager.Player1TankType = config.tankTypes.HEAVY; //GOOD
 //(this.getChildAt(0) as base.Button).setCoordination(100,200);
         break;
         case "p1medium":
