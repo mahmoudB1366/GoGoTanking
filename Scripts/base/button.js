@@ -34,6 +34,11 @@ var base;
         Button.prototype._mouseOut = function () {
             this.alpha = 1.0;
         };
+        // Public Methods
+        Button.prototype.setCoordination = function (x, y) {
+            this.x = x;
+            this.y = y;
+        };
         return Button;
     }(createjs.Bitmap));
     base.Button = Button;

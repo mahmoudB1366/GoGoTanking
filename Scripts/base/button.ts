@@ -27,5 +27,9 @@ module base {
         }
 
         // Public Methods
+        public setCoordination(x:number,y:number):void{
+            this.x = x;
+            this.y = y;
+        }
     }
 }

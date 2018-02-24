@@ -21,12 +21,18 @@ var scenes;
         }
         // Private Mathods
         StartScene.prototype._startButtonClick = function () {
-            Core.GameManager.currentScene = config.Scene.PLAY;
+            if ((Core.GameManager.Player1TankType != null) && (Core.GameManager.Player1TankType != null)) {
+                Core.GameManager.currentScene = config.Scene.PLAY;
+            }
+            else {
+                alert("Both Players need to select tank types!!!");
+            }
         };
         StartScene.prototype._setPlayerSelection = function (eventObject) {
             switch (eventObject.target.name) {
                 case "p1heavy":
                     Core.GameManager.Player1TankType = config.tankTypes.HEAVY;
+                    //(this.getChildAt(0) as base.Button).setCoordination(100,200);
                     break;
                 case "p1medium":
                     Core.GameManager.Player1TankType = config.tankTypes.MEDIUM;
@@ -48,6 +54,9 @@ var scenes;
         // Public Methods
         // Initialize Game Variables and objects
         StartScene.prototype.Start = function () {
+            Core.GameManager.Player1TankType = null;
+            Core.GameManager.Player2TankType = null;
+            this._selectionShadow = new base.Button("selection", 100, 100);
             this._player1 = new base.Label("Player1:", "24px", "Consolas", "#000000", 100, 50, true);
             this._p1Heavy = new base.Button("p1heavy", 200, 100);
             this._p1Medium = new base.Button("p1medium", 300, 100);
@@ -70,8 +79,10 @@ var scenes;
         // This is where the fun happens
         StartScene.prototype.Main = function () {
             // add the welcome label to the scene
+            //this.addChild(this._selectionShadow);
             this.addChild(this._player1);
             this.addChild(this._player2);
+            //this.addChild(this._selectionShadow);
             this.addChild(this._p1Heavy);
             this.addChild(this._p1Medium);
             this.addChild(this._p1Light);
