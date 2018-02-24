@@ -44,6 +44,10 @@ module Core {
       public static Level2Winner:string;
       public static Level3Winner:string;
 
+      //Players Tank Selections
+      public static Player1TankType:config.tankTypes;
+      public static Player2TankType:config.tankTypes;
+
 
     }
   }

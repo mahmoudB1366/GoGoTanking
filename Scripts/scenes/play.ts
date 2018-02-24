@@ -66,6 +66,32 @@ private checkLives():void{
       }
 }
 
+private setupTankTypes():void{
+  switch(Core.GameManager.Player1TankType) {
+    case config.tankTypes.HEAVY:
+    this._player1 = new objects.P1Heavy();
+    break;
+    case config.tankTypes.MEDIUM:
+    this._player1 = new objects.P1Medium();
+    break;
+    case config.tankTypes.LIGHT:
+    this._player1 = new objects.P1Medium();
+    break;
+  }
+  switch(Core.GameManager.Player2TankType) {
+    case config.tankTypes.HEAVY:
+    this._player2 = new objects.P2Heavy();
+    break;
+    case config.tankTypes.MEDIUM:
+    this._player2 = new objects.P2Medium();
+    break;
+    case config.tankTypes.LIGHT:
+    this._player2 = new objects.P2Medium();
+    break;
+  }
+
+}
+
     // Public Methods
 
     // Initialize Game Variables and objects
@@ -73,12 +99,10 @@ private checkLives():void{
       Core.GameManager.Timer = 90;
       this._frameCounter = 0;
       this._background = new Levels.Level1();
-      this._player1 = new objects.P1Medium();
-      this._player2 = new objects.P2Heavy();
-      this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Consolas", "#000000", 75, 15, true);
-      this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 565, 15, true);
+      this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Consolas", "#000000", 100, 15, true);
+      this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
       this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);
-
+      this.setupTankTypes();
       
 
 

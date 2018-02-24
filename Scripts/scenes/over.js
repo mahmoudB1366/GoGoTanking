@@ -27,7 +27,7 @@ var scenes;
         // Initialize Game Variables and objects
         OverScene.prototype.Start = function () {
             this._overLabel = new base.Label("The Winner is: " + Core.GameManager.Level1Winner, "30px", "Consolas", "#000000", 320, 240, true);
-            this._backButton = new base.Button(this.assetManager, "backButton", 320, 340);
+            this._backButton = new base.Button("backButton", 320, 340);
             this.Main();
         };
         OverScene.prototype.Update = function () {
