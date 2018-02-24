@@ -5,6 +5,7 @@ module Core {
       public static currentScene: number;
       public static KeyboardEvent: KeyboardEvent;
       public static playScene : base.Scene;
+      public static Timer:number;
 
       public static P1Health:number;
       public static P2Health:number;
@@ -18,12 +19,12 @@ module Core {
       public static M_tank_speed = 1.5;
       public static M_bullet_range = 1.5;
       public static M_bullet_speed = 3;
-      public static M_bullet_power = 50;
+      public static M_bullet_power = 40;
 
       public static L_tank_speed = 1.5;
       public static L_bullet_range = 1.5;
       public static L_bullet_speed = 1.5;
-      public static L_bullet_power = 50;
+      public static L_bullet_power = 25;
 
       //Controllers
       public static P1_LEFT = 'a';
@@ -37,5 +38,12 @@ module Core {
       public static P2_UP = 'i';
       public static P2_DOWN = 'k';
       public static P2_FIRE = 'p';
+
+      //Level Winners
+      public static Level1Winner:string;
+      public static Level2Winner:string;
+      public static Level3Winner:string;
+
+
     }
   }

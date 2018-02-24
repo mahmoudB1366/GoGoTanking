@@ -1,12 +1,12 @@
 module base {
     export abstract class Bullet extends createjs.Bitmap {
       // private instance variables
-      private _range: number;
-      private _speed: number;
-      private _power: number;
-      private _initX: number;
-      private _initY: number;
-      private _angel : number;
+      protected _range: number;
+      protected _speed: number;
+      protected _power: number;
+      protected _initX: number;
+      protected _initY: number;
+      protected _angel : number;
 
       protected _enemy : string;
       protected _enemyTank : base.Tank;
