@@ -5,11 +5,11 @@ module base {
     protected _dy: number;
 
     // public properties
-    public width: number;
-    public height: number;
-    public halfWidth: number;
-    public halfHeight: number;
-    public isColliding: boolean;
+    public Width: number;
+    public Height: number;
+    public HalfWidth: number;
+    public HalfHeight: number;
+    public IsColliding: boolean;
 
     // constructors
     constructor( imageString:string) {
@@ -19,13 +19,13 @@ module base {
   }
     // private methods
     protected _initialize():void {
-      this.width = this.getBounds().width;
-      this.height = this.getBounds().height;
-      this.halfWidth = this.width * 0.5;
-      this.halfHeight = this.height * 0.5;
-      this.regX = this.halfWidth;
-      this.regY = this.halfHeight;
-      this.isColliding = false;
+      this.Width = this.getBounds().width;
+      this.Height = this.getBounds().height;
+      this.HalfWidth = this.Width * 0.5;
+      this.HalfHeight = this.Height * 0.5;
+      this.regX = this.HalfWidth;
+      this.regY = this.HalfHeight;
+      this.IsColliding = false;
     }
 
     // public methods

@@ -22,6 +22,22 @@ module scenes {
     }
 
     // Private Mathods
+    public CheckCollisions():void {
+      let _bullet1 = this.getChildByName("Bullet1") as base.Bullet;
+      let _bullet2 = this.getChildByName("Bullet2") as base.Bullet;
+      let _player1 = this.getChildByName("Player1") as base.GameObject;
+      let _player2 = this.getChildByName("Player2") as base.GameObject;
+      if (_bullet1!=null)
+      {
+          managers.Collision.CheckBullet(_bullet1,_player2,"Player2");
+      }
+      if (_bullet2!=null)
+      {
+          managers.Collision.CheckBullet(_bullet2,_player1,"Player1");
+      }
+    }
+
+
 private updateLables():void{
   this._frameCounter +=1;
   if (this._frameCounter >=60)
@@ -51,8 +67,6 @@ private checkLives():void{
 
         }
       }
-      
-      
       if (this._player2 !=null)
       {
         this._player2.Update();
@@ -64,6 +78,7 @@ private checkLives():void{
           Core.GameManager.currentScene = config.Scene.OVER;
         }
       }
+
 }
 
 private setupTankTypes():void{
@@ -89,7 +104,8 @@ private setupTankTypes():void{
     this._player2 = new objects.P2Light();
     break;
   }
-
+    this._player1.name = "Player1";
+    this._player2.name = "Player2";
 }
 
     // Public Methods
@@ -110,6 +126,7 @@ private setupTankTypes():void{
     }
 
     public Update(): void {
+      this.CheckCollisions();
       this.updateLables();
       this._background.Update();
       this.checkLives()

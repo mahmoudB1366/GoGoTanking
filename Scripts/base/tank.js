@@ -12,11 +12,12 @@ var base;
 (function (base) {
     var Tank = /** @class */ (function (_super) {
         __extends(Tank, _super);
+        // public properties
         // constructors
         function Tank(imageString) {
             var _this = _super.call(this, imageString) || this;
             _this.name = imageString;
-            _this._initialize();
+            //this._initialize();
             _this.Start();
             return _this;
         }
@@ -29,7 +30,7 @@ var base;
             this.CheckBounds();
             if (this._bullet != null) {
                 this._bullet.Update();
-                if (this._bullet.IsOut()) {
+                if (this._bullet.IsBulletOut()) {
                     this._bullet = null;
                 }
             }

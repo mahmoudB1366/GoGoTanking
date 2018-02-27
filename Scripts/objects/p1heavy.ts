@@ -10,6 +10,7 @@ module objects {
         this.setTankProperties();
         this.setController();
         this.Start();
+        
       }
   
       // private methods

@@ -18,11 +18,6 @@ module base {
      protected  _bullet :base.Bullet;
   
       // public properties
-      public Width: number;
-      public Height: number;
-      public HalfWidth: number;
-      public HalfHeight: number;
-      public LayerIndex : number;
       
       
   
@@ -30,11 +25,11 @@ module base {
       constructor(imageString:string) {
         super(imageString);
         this.name = imageString;
-        this._initialize();
+        //this._initialize();
         this.Start();
     }
       // private methods
-  
+      
       // public methods
       public Start(): void {
 
@@ -49,7 +44,7 @@ module base {
         if (this._bullet != null)
         {
           this._bullet.Update();
-          if (this._bullet.IsOut())
+          if (this._bullet.IsBulletOut())
           {
             this._bullet = null;
           }

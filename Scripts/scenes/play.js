@@ -23,6 +23,18 @@ var scenes;
             return _this;
         }
         // Private Mathods
+        PlayScene.prototype.CheckCollisions = function () {
+            var _bullet1 = this.getChildByName("Bullet1");
+            var _bullet2 = this.getChildByName("Bullet2");
+            var _player1 = this.getChildByName("Player1");
+            var _player2 = this.getChildByName("Player2");
+            if (_bullet1 != null) {
+                managers.Collision.CheckBullet(_bullet1, _player2, "Player2");
+            }
+            if (_bullet2 != null) {
+                managers.Collision.CheckBullet(_bullet2, _player1, "Player1");
+            }
+        };
         PlayScene.prototype.updateLables = function () {
             this._frameCounter += 1;
             if (this._frameCounter >= 60) {
@@ -78,6 +90,8 @@ var scenes;
                     this._player2 = new objects.P2Light();
                     break;
             }
+            this._player1.name = "Player1";
+            this._player2.name = "Player2";
         };
         // Public Methods
         // Initialize Game Variables and objects
@@ -92,6 +106,7 @@ var scenes;
             this.Main();
         };
         PlayScene.prototype.Update = function () {
+            this.CheckCollisions();
             this.updateLables();
             this._background.Update();
             this.checkLives();
