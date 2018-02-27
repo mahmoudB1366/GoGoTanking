@@ -16,7 +16,7 @@ module base {
      protected _startFire :boolean;
 
      protected  _bullet :base.Bullet;
-  
+     
       // public properties
       
       
@@ -25,6 +25,7 @@ module base {
       constructor(imageString:string) {
         super(imageString);
         this.name = imageString;
+
         //this._initialize();
         this.Start();
     }
@@ -32,7 +33,7 @@ module base {
       
       // public methods
       public Start(): void {
-
+        
       }
   
       public Update(): void {
@@ -124,7 +125,11 @@ module base {
         }
         else if(this._startFire) {
           if (this._bullet == null)
-          this.fire();
+          {
+            createjs.Sound.play("fire");
+            this.fire();
+          }
+          
         }
         
       }

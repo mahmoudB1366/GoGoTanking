@@ -12,9 +12,6 @@ var scenes;
 (function (scenes) {
     var PlayScene = /** @class */ (function (_super) {
         __extends(PlayScene, _super);
-        //private _island: objects.Island;
-        //private _clouds: objects.Cloud[];
-        // private _cloudNum: number;
         // Public Properties
         // Constructor
         function PlayScene() {
@@ -54,6 +51,7 @@ var scenes;
                     this.removeChild(this._player1);
                     this._player1 = null;
                     Core.GameManager.Level1Winner = "Player2";
+                    this._tankSound.stop();
                     Core.GameManager.currentScene = config.Scene.OVER;
                 }
             }
@@ -63,6 +61,7 @@ var scenes;
                     this.removeChild(this._player2);
                     this._player2 = null;
                     Core.GameManager.Level1Winner = "Player1";
+                    this._tankSound.stop();
                     Core.GameManager.currentScene = config.Scene.OVER;
                 }
             }
@@ -103,6 +102,9 @@ var scenes;
             this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
             this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);
             this.setupTankTypes();
+            this._tankSound = createjs.Sound.play("tankMove");
+            this._tankSound.loop = -1;
+            this._tankSound.volume = 0.3;
             this.Main();
         };
         PlayScene.prototype.Update = function () {

@@ -26,7 +26,10 @@
     {id: "selection", src:"./Assets/images/selection.png"},
     {id: "bg1", src:"./Assets/images/bg1.png"},
     {id: "start", src:"./Assets/images/start.png"},
-    {id: "gameOver", src:"./Assets/images/gameover.png"}
+    {id: "gameOver", src:"./Assets/images/gameover.png"},
+    {id: "tankMove", src:"./Assets/audio/tankMove.mp3"},
+    {id: "fire", src:"./Assets/audio/fire.mp3"},
+    {id: "explosion", src:"./Assets/audio/explosion.mp3"}
   ];
 
   // preloads assets

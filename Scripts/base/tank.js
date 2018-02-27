@@ -98,8 +98,10 @@ var base;
                 this.rotation = 180;
             }
             else if (this._startFire) {
-                if (this._bullet == null)
+                if (this._bullet == null) {
+                    createjs.Sound.play("fire");
                     this.fire();
+                }
             }
         };
         return Tank;

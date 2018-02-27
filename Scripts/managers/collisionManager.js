@@ -11,6 +11,7 @@ var managers;
             if (math.Vec2.Distance(P1, P2) < (object1.HalfHeight + object2.HalfHeight)) {
                 if (!object2.IsColliding) {
                     object2.IsColliding = true;
+                    createjs.Sound.play("explosion");
                     switch (object2.name) {
                         case enemyName:
                             //createjs.Sound.play("yay");

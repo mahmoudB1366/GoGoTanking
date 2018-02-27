@@ -8,9 +8,7 @@ module scenes {
     private _p2Label: base.Label;
     private _timerLabel: base.Label;
     private _frameCounter:number;
-    //private _island: objects.Island;
-    //private _clouds: objects.Cloud[];
-   // private _cloudNum: number;
+    private _tankSound:createjs.AbstractSoundInstance;
 
     // Public Properties
 
@@ -63,7 +61,9 @@ private checkLives():void{
           this.removeChild(this._player1);
           this._player1 = null;
           Core.GameManager.Level1Winner = "Player2";
+          this._tankSound.stop();
           Core.GameManager.currentScene = config.Scene.OVER;
+          
 
         }
       }
@@ -75,7 +75,9 @@ private checkLives():void{
           this.removeChild(this._player2);
           this._player2 = null;
           Core.GameManager.Level1Winner = "Player1";
+          this._tankSound.stop();
           Core.GameManager.currentScene = config.Scene.OVER;
+          
         }
       }
 
@@ -119,7 +121,9 @@ private setupTankTypes():void{
       this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
       this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);
       this.setupTankTypes();
-      
+      this._tankSound = createjs.Sound.play("tankMove");
+      this._tankSound.loop = -1;
+      this._tankSound.volume = 0.3;
 
 
       this.Main();
