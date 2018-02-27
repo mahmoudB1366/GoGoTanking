@@ -13,6 +13,9 @@
 /// <reference path="../../Scripts/scenes/start.ts"/>
 
 /// <reference path="../../Scripts/levels/level1.ts"/>
+/// <reference path="../../Scripts/levels/startgame.ts"/>
+/// <reference path="../../Scripts/levels/gameover.ts"/>
+
 /// <reference path="../../Scripts/objects/p1medium.ts"/>
 /// <reference path="../../Scripts/objects/p2medium.ts"/>
 /// <reference path="../../Scripts/base/bullet.ts"/>
