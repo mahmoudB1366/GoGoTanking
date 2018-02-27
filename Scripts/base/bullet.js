@@ -66,11 +66,27 @@ var base;
         };
         Bullet.prototype.Move = function () {
             switch (this._angel) {
+                case -45:
+                    this.x -= this._speed;
+                    this.y -= this._speed;
+                    break;
                 case -90:
                     this.x -= this._speed;
                     break;
+                case -135:
+                    this.x -= this._speed;
+                    this.y += this._speed;
+                    break;
+                case +45:
+                    this.x += this._speed;
+                    this.y -= this._speed;
+                    break;
                 case 90:
                     this.x += this._speed;
+                    break;
+                case +135:
+                    this.x += this._speed;
+                    this.y += this._speed;
                     break;
                 case 180:
                     this.y += this._speed;

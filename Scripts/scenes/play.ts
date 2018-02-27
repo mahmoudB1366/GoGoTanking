@@ -1,7 +1,7 @@
 module scenes {
   export class PlayScene extends base.Scene {
     // Private Instance Variables
-    private _background: Levels.Level1;
+    private _background: Levels.Background;
     public _player1: base.Tank;
     public _player2: base.Tank;
     private _p1Label: base.Label;
@@ -75,7 +75,7 @@ private setupTankTypes():void{
     this._player1 = new objects.P1Medium();
     break;
     case config.tankTypes.LIGHT:
-    this._player1 = new objects.P1Medium();
+    this._player1 = new objects.P1Light();
     break;
   }
   switch(Core.GameManager.Player2TankType) {
@@ -86,7 +86,7 @@ private setupTankTypes():void{
     this._player2 = new objects.P2Medium();
     break;
     case config.tankTypes.LIGHT:
-    this._player2 = new objects.P2Medium();
+    this._player2 = new objects.P2Light();
     break;
   }
 
@@ -98,7 +98,7 @@ private setupTankTypes():void{
     public Start(): void {
       Core.GameManager.Timer = 90;
       this._frameCounter = 0;
-      this._background = new Levels.Level1();
+      this._background = new Levels.Background("bg1");
       this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Consolas", "#000000", 100, 15, true);
       this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
       this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);

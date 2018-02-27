@@ -9,6 +9,7 @@
     var assetManifest;
     var currentScene;
     var currentState;
+    var keyBoardManager;
     assetManifest = [
         { id: "startButton", src: "./Assets/images/startButton.png" },
         { id: "backButton", src: "./Assets/images/backButton.png" },
@@ -41,7 +42,8 @@
         Core.GameManager.stage = stage;
         Core.GameManager.currentScene = config.Scene.START;
         currentState = config.Scene.START;
-        document.addEventListener('keydown', DetectKey);
+        keyBoardManager = new managers.KeyboardManager();
+        Core.GameManager.keyboardManager = keyBoardManager;
         console.log("Listening to Keyboad...");
         Main();
     }
@@ -69,9 +71,6 @@
         }
         currentState = Core.GameManager.currentScene;
         stage.addChild(currentScene);
-    }
-    function DetectKey(event) {
-        Core.GameManager.KeyboardEvent = event;
     }
     window.onload = Init;
 })();

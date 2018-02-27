@@ -10,13 +10,13 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var P2Heavy = /** @class */ (function (_super) {
-        __extends(P2Heavy, _super);
+    var P2Light = /** @class */ (function (_super) {
+        __extends(P2Light, _super);
         // private instance variables
         // public properties
         // Constructor
-        function P2Heavy() {
-            var _this = _super.call(this, "p2heavy") || this;
+        function P2Light() {
+            var _this = _super.call(this, "p2light") || this;
             _this.setTankProperties();
             _this.setController();
             _this.Start();
@@ -24,16 +24,16 @@ var objects;
         }
         // private methods
         //set Tank Properties
-        P2Heavy.prototype.setTankProperties = function () {
-            this._tankSpeed = Core.GameManager.H_tank_speed;
-            this._bulletSpeed = Core.GameManager.H_bullet_speed;
-            this._bulletRange = Core.GameManager.H_bullet_range;
-            this._bulletPower = Core.GameManager.H_bullet_power;
+        P2Light.prototype.setTankProperties = function () {
+            this._tankSpeed = Core.GameManager.L_tank_speed;
+            this._bulletSpeed = Core.GameManager.L_bullet_speed;
+            this._bulletRange = Core.GameManager.L_bullet_range;
+            this._bulletPower = Core.GameManager.L_bullet_power;
             this._tankLife = 100;
             Core.GameManager.P2Health = 100;
         };
         //set Controllers
-        P2Heavy.prototype.setController = function () {
+        P2Light.prototype.setController = function () {
             this._moveLeft = Core.GameManager.keyboardManager.P2Left;
             this._moveRight = Core.GameManager.keyboardManager.P2Right;
             this._moveUp = Core.GameManager.keyboardManager.P2Up;
@@ -42,20 +42,20 @@ var objects;
         };
         // public methods
         // Initializes variables and creates new objects
-        P2Heavy.prototype.Start = function () {
+        P2Light.prototype.Start = function () {
             this.y = 130;
             this.x = 200;
         };
         // updates the game object every frame
-        P2Heavy.prototype.Update = function () {
+        P2Light.prototype.Update = function () {
             _super.prototype.Update.call(this);
         };
-        P2Heavy.prototype.fire = function () {
+        P2Light.prototype.fire = function () {
             this._bullet = new objects.Bullet2(this.x, this.y, this.rotation, this._bulletSpeed, this._bulletRange, this._bulletPower);
             this.parent.addChild(this._bullet);
         };
-        return P2Heavy;
+        return P2Light;
     }(base.Tank));
-    objects.P2Heavy = P2Heavy;
+    objects.P2Light = P2Light;
 })(objects || (objects = {}));
-//# sourceMappingURL=p2heavy.js.map
+//# sourceMappingURL=p2light.js.map

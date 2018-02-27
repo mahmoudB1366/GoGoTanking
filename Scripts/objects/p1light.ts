@@ -1,13 +1,14 @@
 module objects {
-    export class P1Medium extends base.Tank {
+    export class P1Light extends base.Tank {
       // private instance variables
   
       // public properties
   
       // Constructor
       constructor() {
-        super("p1medium");
+        super("p1light");
         this.setTankProperties();
+        this.setController();
         this.Start();
       }
   
@@ -15,10 +16,10 @@ module objects {
 
       //set Tank Properties
       private setTankProperties():void{
-        this._tankSpeed = Core.GameManager.M_tank_speed;
-        this._bulletSpeed = Core.GameManager.M_bullet_speed
-        this._bulletRange = Core.GameManager.M_bullet_range;
-        this._bulletPower = Core.GameManager.M_bullet_power;
+        this._tankSpeed = Core.GameManager.L_tank_speed;
+        this._bulletSpeed = Core.GameManager.L_bullet_speed
+        this._bulletRange = Core.GameManager.L_bullet_range;
+        this._bulletPower = Core.GameManager.L_bullet_power;
         this._tankLife = 100;
         Core.GameManager.P1Health = 100;
       }
@@ -41,7 +42,6 @@ module objects {
       // updates the game object every frame
       public Update():void {
         super.Update();
-        //this.setController();
       }
 
       protected fire():void
@@ -53,4 +53,3 @@ module objects {
   
     }
   }
-  

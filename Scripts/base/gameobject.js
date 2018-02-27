@@ -13,8 +13,8 @@ var base;
     var GameObject = /** @class */ (function (_super) {
         __extends(GameObject, _super);
         // constructors
-        function GameObject(assetManager, imageString) {
-            var _this = _super.call(this, assetManager.getResult(imageString)) || this;
+        function GameObject(imageString) {
+            var _this = _super.call(this, Core.GameManager.assetManager.getResult(imageString)) || this;
             _this.name = imageString;
             _this._initialize();
             return _this;
@@ -27,6 +27,7 @@ var base;
             this.halfHeight = this.height * 0.5;
             this.regX = this.halfWidth;
             this.regY = this.halfHeight;
+            this.isColliding = false;
         };
         // public methods
         GameObject.prototype.Start = function () {

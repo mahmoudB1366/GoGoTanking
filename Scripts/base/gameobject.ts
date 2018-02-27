@@ -9,21 +9,23 @@ module base {
     public height: number;
     public halfWidth: number;
     public halfHeight: number;
+    public isColliding: boolean;
 
     // constructors
-    constructor(assetManager: createjs.LoadQueue, imageString:string) {
-      super(assetManager.getResult(imageString));
+    constructor( imageString:string) {
+      super(Core.GameManager.assetManager.getResult(imageString));
       this.name = imageString;
       this._initialize();
   }
     // private methods
-    private _initialize():void {
+    protected _initialize():void {
       this.width = this.getBounds().width;
       this.height = this.getBounds().height;
       this.halfWidth = this.width * 0.5;
       this.halfHeight = this.height * 0.5;
       this.regX = this.halfWidth;
       this.regY = this.halfHeight;
+      this.isColliding = false;
     }
 
     // public methods
