@@ -3,11 +3,11 @@ module base {
     // private instance variables
     protected _keyboardEvent: KeyboardEvent;
 
-    protected _tankSpeed: number;
-    protected _tankLife: number;
-    protected _bulletRange: number;
-    protected _bulletSpeed: number;
-    protected _bulletPower: number;
+    public TankSpeed: number;
+    public TankLife: number;
+    public BulletRange: number;
+    public BulletSpeed: number;
+    public BulletPower: number;
 
     protected _moveLeft: boolean;
     protected _moveRight: boolean;
@@ -36,25 +36,25 @@ module base {
 
     //setup tank types
     private setupTank(): void {
-      this._tankLife = 100;
+      this.TankLife = 100;
       switch (this._tankType) {
         case config.tankTypes.HEAVY:
-          this._tankSpeed = Core.GameManager.H_tank_speed;
-          this._bulletSpeed = Core.GameManager.H_bullet_speed
-          this._bulletRange = Core.GameManager.H_bullet_range;
-          this._bulletPower = Core.GameManager.H_bullet_power;
+          this.TankSpeed = Core.GameManager.H_tank_speed;
+          this.BulletSpeed = Core.GameManager.H_bullet_speed
+          this.BulletRange = Core.GameManager.H_bullet_range;
+          this.BulletPower = Core.GameManager.H_bullet_power;
           break;
         case config.tankTypes.MEDIUM:
-          this._tankSpeed = Core.GameManager.M_tank_speed;
-          this._bulletSpeed = Core.GameManager.M_bullet_speed
-          this._bulletRange = Core.GameManager.M_bullet_range;
-          this._bulletPower = Core.GameManager.M_bullet_power;
+          this.TankSpeed = Core.GameManager.M_tank_speed;
+          this.BulletSpeed = Core.GameManager.M_bullet_speed
+          this.BulletRange = Core.GameManager.M_bullet_range;
+          this.BulletPower = Core.GameManager.M_bullet_power;
           break;
         case config.tankTypes.LIGHT:
-          this._tankSpeed = Core.GameManager.L_tank_speed;
-          this._bulletSpeed = Core.GameManager.L_bullet_speed
-          this._bulletRange = Core.GameManager.L_bullet_range;
-          this._bulletPower = Core.GameManager.L_bullet_power;
+          this.TankSpeed = Core.GameManager.L_tank_speed;
+          this.BulletSpeed = Core.GameManager.L_bullet_speed
+          this.BulletRange = Core.GameManager.L_bullet_range;
+          this.BulletPower = Core.GameManager.L_bullet_power;
           break;
       }
     }
@@ -83,9 +83,9 @@ module base {
       this.Bullet.x = this.x;
       this.Bullet.y = this.y;
       this.Bullet._angel = this.rotation;
-      this.Bullet._speed = this._bulletSpeed;
-      this.Bullet._power = this._bulletPower;
-      this.Bullet._range = this._bulletRange;
+      this.Bullet._speed = this.BulletSpeed;
+      this.Bullet._power = this.BulletPower;
+      this.Bullet._range = this.BulletRange;
 
     }
 
@@ -134,39 +134,39 @@ module base {
     private move(): void {
       this.setController();
       if ((this._moveLeft) && (this._moveUp)) {
-        this.x -= this._tankSpeed;
-        this.y -= this._tankSpeed;
+        this.x -= this.TankSpeed;
+        this.y -= this.TankSpeed;
         this.rotation = -45;
       }
       else if ((this._moveLeft) && (this._moveDown)) {
-        this.x -= this._tankSpeed;
-        this.y += this._tankSpeed;
+        this.x -= this.TankSpeed;
+        this.y += this.TankSpeed;
         this.rotation = -135;
       }
       else if ((this._moveRight) && (this._moveDown)) {
-        this.x += this._tankSpeed;
-        this.y += this._tankSpeed;
+        this.x += this.TankSpeed;
+        this.y += this.TankSpeed;
         this.rotation = 135;
       }
       else if ((this._moveRight) && (this._moveUp)) {
-        this.x += this._tankSpeed;
-        this.y -= this._tankSpeed;
+        this.x += this.TankSpeed;
+        this.y -= this.TankSpeed;
         this.rotation = 45;
       }
       else if (this._moveLeft) {
-        this.x -= this._tankSpeed;
+        this.x -= this.TankSpeed;
         this.rotation = -90;
       }
       else if (this._moveRight) {
-        this.x += this._tankSpeed;
+        this.x += this.TankSpeed;
         this.rotation = 90;
       }
       else if (this._moveUp) {
-        this.y -= this._tankSpeed;
+        this.y -= this.TankSpeed;
         this.rotation = 0;
       }
       else if (this._moveDown) {
-        this.y += this._tankSpeed;
+        this.y += this.TankSpeed;
         this.rotation = 180;
       }
       else if (this._startFire) {

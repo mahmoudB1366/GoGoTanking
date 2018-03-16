@@ -13,6 +13,7 @@
 /// <reference path="../../Scripts/scenes/start.ts"/>
 /// <reference path="../../Scripts/levels/background.ts"/>
 /// <reference path="../../Scripts/levels/obstacle.ts"/>
+/// <reference path="../../Scripts/levels/popup.ts"/>
 /// <reference path="../../Scripts/tools/vec2.ts"/>
 /// <reference path="../../Scripts/base/bullet.ts"/>
 /// <reference path="../../Scripts/objects/p2heavy.ts"/>

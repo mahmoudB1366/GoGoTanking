@@ -33,7 +33,11 @@
     {id: "stone", src:"./Assets/images/stone.png"},
     {id: "tree", src:"./Assets/images/tree.png"},
     {id: "wood", src:"./Assets/images/wood.png"},
-    {id: "sea", src:"./Assets/images/sea.png"}
+    {id: "sea", src:"./Assets/images/sea.png"},
+    {id: "star", src:"./Assets/images/star.png"},
+    {id: "mine", src:"./Assets/images/mine.png"},
+    {id: "health", src:"./Assets/images/health.png"},
+    {id: "range", src:"./Assets/images/range.png"}
   ];
 
   // preloads assets

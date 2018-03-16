@@ -30,6 +30,10 @@ var scenes;
             var _player2 = this.getChildByName("Player2");
             _collidables[_collidablesCounter++] = _player2;
             _collidables[_collidablesCounter++] = _player1;
+            _collidables[_collidablesCounter++] = this._star;
+            _collidables[_collidablesCounter++] = this._health;
+            _collidables[_collidablesCounter++] = this._mine;
+            _collidables[_collidablesCounter++] = this._range;
             while (this._obstacles[i] != null) {
                 _collidables[_collidablesCounter++] = this._obstacles[i++];
             }
@@ -46,10 +50,36 @@ var scenes;
                 managers.Collision.CheckTank(_player2, _collidables, "Player1");
             }
         };
+        PlayScene.prototype.displayPopup = function () {
+            var _timer = Core.GameManager.Timer;
+            if (_timer > 0) {
+                if (_timer % 20 == 0) {
+                    this._health.x = this.generateRandomNumber("x");
+                    this._health.y = this.generateRandomNumber("y");
+                    this._star.x = this.generateRandomNumber("x");
+                    this._star.y = this.generateRandomNumber("y");
+                    this._range.x = this.generateRandomNumber("x");
+                    this._range.y = this.generateRandomNumber("y");
+                }
+                if (_timer % 30 == 0) {
+                    this._mine.x = this.generateRandomNumber("x");
+                    this._mine.y = this.generateRandomNumber("y");
+                }
+            }
+        };
+        PlayScene.prototype.generateRandomNumber = function (corodinates) {
+            switch (corodinates) {
+                case "x":
+                    return Math.floor(Math.random() * 610) + 15;
+                case "y":
+                    return Math.floor(Math.random() * 450) + 15;
+            }
+        };
         PlayScene.prototype.updateLables = function () {
             this._frameCounter += 1;
             if (this._frameCounter >= 60) {
                 if (Core.GameManager.Timer > 0) {
+                    this.displayPopup();
                     Core.GameManager.Timer -= 1;
                 }
                 this._frameCounter = 0;
@@ -105,6 +135,8 @@ var scenes;
             }
             this._player1.name = "Player1";
             this._player2.name = "Player2";
+            Core.GameManager.P1Tank = this._player1;
+            Core.GameManager.P2Tank = this._player2;
             this._player1.x = 40;
             this._player1.y = 240;
             this._player2.x = 600;
@@ -173,6 +205,10 @@ var scenes;
             this._tankSound = createjs.Sound.play("tankMove");
             this._tankSound.loop = -1;
             this._tankSound.volume = 0.3;
+            this._mine = new Levels.PopUp(5000, 5000, "mine");
+            this._star = new Levels.PopUp(5000, 5000, "star");
+            this._range = new Levels.PopUp(5000, 5000, "range");
+            this._health = new Levels.PopUp(5000, 5000, "health");
             this.defineObstacles();
             this.Main();
         };
@@ -181,6 +217,8 @@ var scenes;
             this.updateLables();
             this._background.Update();
             this.checkLives();
+            this._player1 = Core.GameManager.P1Tank;
+            this._player2 = Core.GameManager.P2Tank;
         };
         // This is where the fun happens
         PlayScene.prototype.Main = function () {
@@ -193,6 +231,10 @@ var scenes;
             this.addChild(this._p2Label);
             this.addChild(this._timerLabel);
             this.loadbstacles();
+            this.addChild(this._star);
+            this.addChild(this._mine);
+            this.addChild(this._health);
+            this.addChild(this._range);
             this.addChild(this._player1.Bullet);
             this.addChild(this._player2.Bullet);
             Core.GameManager.playScene = this;

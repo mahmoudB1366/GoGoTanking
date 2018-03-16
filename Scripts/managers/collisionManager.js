@@ -30,6 +30,42 @@ var managers;
                             case "wood":
                                 createjs.Sound.play("explosion");
                                 break;
+                            case "mine":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                break;
+                            case "star":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Tank.TankSpeed += 0.2;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Tank.TankSpeed += 0.2;
+                                break;
+                            case "health":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Health = 100;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Health = 100;
+                                break;
+                            case "range":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Tank.BulletRange += 40;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Tank.BulletRange += 40;
+                                break;
                             default:
                                 continue;
                         }
@@ -67,7 +103,40 @@ var managers;
                                 //Customize if required
                                 break;
                             case "mine":
-                                itSelf.parent.removeChild(itSelf);
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Health = 0;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Health = 0;
+                                break;
+                            case "star":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Tank.TankSpeed += 0.2;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Tank.TankSpeed += 0.2;
+                                break;
+                            case "health":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Health = 100;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Health = 100;
+                                break;
+                            case "range":
+                                createjs.Sound.play("explosion");
+                                objects[i].x = 5000;
+                                objects[i].y = 5000;
+                                objects[i].IsColliding = false;
+                                if (enemyName == "Player2")
+                                    Core.GameManager.P1Tank.BulletRange += 40;
+                                if (enemyName == "Player1")
+                                    Core.GameManager.P2Tank.BulletRange += 40;
                                 break;
                         }
                     }
