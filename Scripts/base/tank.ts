@@ -9,11 +9,11 @@ module base {
     public BulletSpeed: number;
     public BulletPower: number;
 
-    protected _moveLeft: boolean;
-    protected _moveRight: boolean;
-    protected _moveUp: boolean;
-    protected _moveDown: boolean;
-    protected _startFire: boolean;
+    public MoveLeft: boolean;
+    public MoveRight: boolean;
+    public MoveUp: boolean;
+    public MoveDown: boolean;
+    public StartFire: boolean;
     
     protected _tankType: config.tankTypes;
 
@@ -93,19 +93,19 @@ module base {
     private setController(): void {
       if (this.name == "Player1") {
 
-        this._moveLeft = Core.GameManager.keyboardManager.P1Left;
-        this._moveRight = Core.GameManager.keyboardManager.P1Right;
-        this._moveUp = Core.GameManager.keyboardManager.P1Up;
-        this._moveDown = Core.GameManager.keyboardManager.P1Down;
-        this._startFire = Core.GameManager.keyboardManager.P1Fire;
+        this.MoveLeft = Core.GameManager.keyboardManager.P1Left;
+        this.MoveRight = Core.GameManager.keyboardManager.P1Right;
+        this.MoveUp = Core.GameManager.keyboardManager.P1Up;
+        this.MoveDown = Core.GameManager.keyboardManager.P1Down;
+        this.StartFire = Core.GameManager.keyboardManager.P1Fire;
       }
       else if (this.name == "Player2") {
 
-        this._moveLeft = Core.GameManager.keyboardManager.P2Left;
-        this._moveRight = Core.GameManager.keyboardManager.P2Right;
-        this._moveUp = Core.GameManager.keyboardManager.P2Up;
-        this._moveDown = Core.GameManager.keyboardManager.P2Down;
-        this._startFire = Core.GameManager.keyboardManager.P2Fire;
+        this.MoveLeft = Core.GameManager.keyboardManager.P2Left;
+        this.MoveRight = Core.GameManager.keyboardManager.P2Right;
+        this.MoveUp = Core.GameManager.keyboardManager.P2Up;
+        this.MoveDown = Core.GameManager.keyboardManager.P2Down;
+        this.StartFire = Core.GameManager.keyboardManager.P2Fire;
       }
     }
 
@@ -133,43 +133,43 @@ module base {
     //detects tank movements & moves the tank
     private move(): void {
       this.setController();
-      if ((this._moveLeft) && (this._moveUp)) {
+      if ((this.MoveLeft) && (this.MoveUp)) {
         this.x -= this.TankSpeed;
         this.y -= this.TankSpeed;
         this.rotation = -45;
       }
-      else if ((this._moveLeft) && (this._moveDown)) {
+      else if ((this.MoveLeft) && (this.MoveDown)) {
         this.x -= this.TankSpeed;
         this.y += this.TankSpeed;
         this.rotation = -135;
       }
-      else if ((this._moveRight) && (this._moveDown)) {
+      else if ((this.MoveRight) && (this.MoveDown)) {
         this.x += this.TankSpeed;
         this.y += this.TankSpeed;
         this.rotation = 135;
       }
-      else if ((this._moveRight) && (this._moveUp)) {
+      else if ((this.MoveRight) && (this.MoveUp)) {
         this.x += this.TankSpeed;
         this.y -= this.TankSpeed;
         this.rotation = 45;
       }
-      else if (this._moveLeft) {
+      else if (this.MoveLeft) {
         this.x -= this.TankSpeed;
         this.rotation = -90;
       }
-      else if (this._moveRight) {
+      else if (this.MoveRight) {
         this.x += this.TankSpeed;
         this.rotation = 90;
       }
-      else if (this._moveUp) {
+      else if (this.MoveUp) {
         this.y -= this.TankSpeed;
         this.rotation = 0;
       }
-      else if (this._moveDown) {
+      else if (this.MoveDown) {
         this.y += this.TankSpeed;
         this.rotation = 180;
       }
-      else if (this._startFire) {
+      else if (this.StartFire) {
 
         if (this.Bullet.x == 10000) {
           createjs.Sound.play("fire");

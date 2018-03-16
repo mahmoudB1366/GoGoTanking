@@ -148,21 +148,85 @@ var managers;
             }
         };
         Collision.forceOut = function (tank, obstacle) {
-            if ((tank.x < obstacle.x) && (tank.rotation >= 45) && (tank.rotation <= 135)) {
-                tank.x = obstacle.x - obstacle.HalfWidth - tank.HalfWidth - 2;
-            }
-            else if ((tank.x > obstacle.x) && (tank.rotation <= -45) && (tank.rotation >= -135)) {
-                tank.x = obstacle.x + obstacle.HalfWidth + tank.HalfWidth + 2;
-            }
-            else if ((tank.y > obstacle.y)) {
-                tank.y = obstacle.y + obstacle.HalfHeight + tank.HalfHeight + 2;
-            }
-            else {
-                tank.y = obstacle.y - obstacle.HalfHeight - tank.HalfHeight - 2;
-            }
+            if (tank.name == "Player1")
+                switch (tank.rotation) {
+                    case 0:
+                        Core.GameManager.keyboardManager.P1Up = false;
+                        break;
+                    case -45:
+                        Core.GameManager.keyboardManager.P1Left = false;
+                        Core.GameManager.keyboardManager.P1Up = false;
+                        break;
+                    case -90:
+                        Core.GameManager.keyboardManager.P1Left = false;
+                        break;
+                    case 90:
+                        Core.GameManager.keyboardManager.P1Right = false;
+                        break;
+                    case 180:
+                        Core.GameManager.keyboardManager.P1Down = false;
+                        break;
+                    case 45:
+                        Core.GameManager.keyboardManager.P1Right = false;
+                        Core.GameManager.keyboardManager.P1Up = false;
+                        break;
+                    case -135:
+                        Core.GameManager.keyboardManager.P1Left = false;
+                        Core.GameManager.keyboardManager.P1Down = false;
+                        break;
+                    case 135:
+                        Core.GameManager.keyboardManager.P1Right = false;
+                        Core.GameManager.keyboardManager.P1Down = false;
+                        break;
+                }
+            if (tank.name == "Player2")
+                switch (tank.rotation) {
+                    case 0:
+                        Core.GameManager.keyboardManager.P2Up = false;
+                        break;
+                    case -45:
+                        Core.GameManager.keyboardManager.P2Left = false;
+                        Core.GameManager.keyboardManager.P2Up = false;
+                        break;
+                    case -90:
+                        Core.GameManager.keyboardManager.P2Left = false;
+                        break;
+                    case 90:
+                        Core.GameManager.keyboardManager.P2Right = false;
+                        break;
+                    case 180:
+                        Core.GameManager.keyboardManager.P2Down = false;
+                        break;
+                    case 45:
+                        Core.GameManager.keyboardManager.P2Right = false;
+                        Core.GameManager.keyboardManager.P2Up = false;
+                        break;
+                    case -135:
+                        Core.GameManager.keyboardManager.P2Left = false;
+                        Core.GameManager.keyboardManager.P2Down = false;
+                        break;
+                    case 135:
+                        Core.GameManager.keyboardManager.P2Right = false;
+                        Core.GameManager.keyboardManager.P2Down = false;
+                        break;
+                }
         };
         return Collision;
     }());
     managers.Collision = Collision;
 })(managers || (managers = {}));
+/*
+ if ((tank.x < obstacle.x) && (tank.rotation >= 45) && (tank.rotation <= 135)) {
+   tank.x = obstacle.x - obstacle.HalfWidth - tank.HalfWidth - 2;
+ }
+ else if ((tank.x > obstacle.x) && (tank.rotation <= -45) && (tank.rotation >= -135)) {
+   tank.x = obstacle.x + obstacle.HalfWidth + tank.HalfWidth + 2;
+ }
+ else if ((tank.y > obstacle.y)) {
+   tank.y = obstacle.y + obstacle.HalfHeight + tank.HalfHeight + 2;
+ }
+ else {
+   tank.y = obstacle.y - obstacle.HalfHeight - tank.HalfHeight - 2;
+ }
+ */ 
 //# sourceMappingURL=collisionManager.js.map

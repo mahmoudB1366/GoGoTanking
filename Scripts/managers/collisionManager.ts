@@ -163,7 +163,81 @@ module managers {
     }
 
 
-    private static forceOut(tank: base.GameObject, obstacle: base.GameObject): void {
+    private static forceOut(tank: base.Tank, obstacle: base.GameObject): void {
+      if (tank.name =="Player1")
+switch(tank.rotation)
+{
+case 0:
+Core.GameManager.keyboardManager.P1Up = false;
+break;
+case -45:
+Core.GameManager.keyboardManager.P1Left = false;
+Core.GameManager.keyboardManager.P1Up = false;
+break;
+case -90:
+Core.GameManager.keyboardManager.P1Left = false;
+break;
+case 90:
+Core.GameManager.keyboardManager.P1Right = false;
+break;
+case 180:
+Core.GameManager.keyboardManager.P1Down = false;
+break;
+case 45:
+Core.GameManager.keyboardManager.P1Right = false;
+Core.GameManager.keyboardManager.P1Up = false;
+break;
+case -135:
+Core.GameManager.keyboardManager.P1Left = false;
+Core.GameManager.keyboardManager.P1Down = false;
+break;
+case 135:
+Core.GameManager.keyboardManager.P1Right = false;
+Core.GameManager.keyboardManager.P1Down = false;
+break;
+}
+
+if (tank.name =="Player2")
+switch(tank.rotation)
+{
+case 0:
+Core.GameManager.keyboardManager.P2Up = false;
+break;
+case -45:
+Core.GameManager.keyboardManager.P2Left = false;
+Core.GameManager.keyboardManager.P2Up = false;
+break;
+case -90:
+Core.GameManager.keyboardManager.P2Left = false;
+break;
+case 90:
+Core.GameManager.keyboardManager.P2Right = false;
+break;
+case 180:
+Core.GameManager.keyboardManager.P2Down = false;
+break;
+case 45:
+Core.GameManager.keyboardManager.P2Right = false;
+Core.GameManager.keyboardManager.P2Up = false;
+break;
+case -135:
+Core.GameManager.keyboardManager.P2Left = false;
+Core.GameManager.keyboardManager.P2Down = false;
+break;
+case 135:
+Core.GameManager.keyboardManager.P2Right = false;
+Core.GameManager.keyboardManager.P2Down = false;
+break;
+}
+
+}
+
+    
+  }
+}
+
+
+     /*
       if ((tank.x < obstacle.x) && (tank.rotation >= 45) && (tank.rotation <= 135)) {
         tank.x = obstacle.x - obstacle.HalfWidth - tank.HalfWidth - 2;
       }
@@ -176,7 +250,4 @@ module managers {
       else {
         tank.y = obstacle.y - obstacle.HalfHeight - tank.HalfHeight - 2;
       }
-
-    }
-  }
-}
+      */
