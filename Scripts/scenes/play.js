@@ -49,6 +49,7 @@ var scenes;
             if (_player2 != null) {
                 managers.Collision.CheckTank(_player2, _collidables, "Player1");
             }
+            _collidables = null;
         };
         PlayScene.prototype.displayPopup = function () {
             var _timer = Core.GameManager.Timer;
@@ -86,7 +87,12 @@ var scenes;
             }
             this._p1Label.text = "Player1: " + Core.GameManager.P1Health;
             this._p2Label.text = "Player2: " + Core.GameManager.P2Health;
-            this._timerLabel.text = "|" + Core.GameManager.Timer + "|";
+            if (Core.GameManager.Timer < 30) {
+                this._timerLabel.text = ".:Last Shot:.";
+            }
+            else {
+                this._timerLabel.text = "|" + Core.GameManager.Timer + "|";
+            }
         };
         PlayScene.prototype.checkLives = function () {
             if (this._player1 != null) {
@@ -109,6 +115,15 @@ var scenes;
                     Core.GameManager.currentScene = config.Scene.OVER;
                 }
             }
+            if (this._obstacles != null)
+                if (this._obstacles.length > 0) {
+                    for (var i = 0; i < this._obstacles.length; ++i) {
+                        if (this._obstacles[i].Life < 1) {
+                            this.removeChild(this._obstacles[i]);
+                            this._obstacles[i].x = 12000;
+                        }
+                    }
+                }
         };
         PlayScene.prototype.setupTankTypes = function () {
             switch (Core.GameManager.Player1TankType) {

@@ -62,6 +62,7 @@ while (this._obstacles[i]!=null){
       {
          managers.Collision.CheckTank(_player2,_collidables,"Player1");
       }
+      _collidables = null;
     }
 
     private displayPopup():void{
@@ -116,7 +117,14 @@ private updateLables():void{
   
   this._p1Label.text = "Player1: " + Core.GameManager.P1Health;
   this._p2Label.text = "Player2: " + Core.GameManager.P2Health;
-  this._timerLabel.text = "|" + Core.GameManager.Timer + "|";
+  
+  if (Core.GameManager.Timer < 30)
+  {
+    this._timerLabel.text = ".:Last Shot:."
+  } else
+  {
+    this._timerLabel.text = "|" + Core.GameManager.Timer + "|";
+  }
 }
 private checkLives():void{
   if (this._player1 !=null)
@@ -145,6 +153,19 @@ private checkLives():void{
           Core.GameManager.currentScene = config.Scene.OVER;
           
         }
+      }
+      if (this._obstacles !=null)
+      if (this._obstacles.length > 0 )
+      {
+for (let i:number =0;i< this._obstacles.length; ++i)
+{
+  if(this._obstacles[i].Life < 1)
+  {
+    this.removeChild(this._obstacles[i]);
+    this._obstacles[i].x = 12000;
+  }
+
+}
       }
 
 }

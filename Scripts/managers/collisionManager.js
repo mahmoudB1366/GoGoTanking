@@ -21,14 +21,19 @@ var managers;
                                 //createjs.Sound.play("yay");
                                 if (enemyName == "Player2")
                                     Core.GameManager.P2Health -= itSelf._power;
+                                if (Core.GameManager.Timer < 30)
+                                    Core.GameManager.P2Health = 0;
                                 if (enemyName == "Player1")
                                     Core.GameManager.P1Health -= itSelf._power;
+                                if (Core.GameManager.Timer < 30)
+                                    Core.GameManager.P1Health = 0;
                                 break;
                             case "stone":
                                 createjs.Sound.play("explosion");
                                 break;
                             case "wood":
                                 createjs.Sound.play("explosion");
+                                objects[i].Life -= 35;
                                 break;
                             case "mine":
                                 createjs.Sound.play("explosion");

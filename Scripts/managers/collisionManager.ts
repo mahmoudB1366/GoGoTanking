@@ -22,9 +22,10 @@ module managers {
                 //createjs.Sound.play("yay");
                 if (enemyName == "Player2")
                   Core.GameManager.P2Health -= (itSelf as base.Bullet)._power;
+                  if (Core.GameManager.Timer < 30) Core.GameManager.P2Health = 0;
                 if (enemyName == "Player1")
                   Core.GameManager.P1Health -= (itSelf as base.Bullet)._power;
-
+                  if (Core.GameManager.Timer < 30) Core.GameManager.P1Health = 0;
 
                 break;
               case "stone":
@@ -32,6 +33,7 @@ module managers {
                 break;
               case "wood":
                 createjs.Sound.play("explosion");
+                objects[i].Life -= 35;
                 break;
                 case "mine":
                 createjs.Sound.play("explosion");
@@ -163,7 +165,7 @@ module managers {
     }
 
 
-    private static forceOut(tank: base.Tank, obstacle: base.GameObject): void {
+    private static forceOut(tank: base.GameObject, obstacle: base.GameObject): void {
       if (tank.name =="Player1")
 switch(tank.rotation)
 {
