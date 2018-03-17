@@ -1,5 +1,5 @@
 module scenes {
-  export class PlayScene extends base.Scene {
+  export class Level1Scene extends base.Scene {
     // Private Instance Variables
     private _background: Levels.Background;
     public _player1: base.Tank;
@@ -136,7 +136,7 @@ private checkLives():void{
           this._player1 = null;
           Core.GameManager.Level1Winner = "Player2";
           this._tankSound.stop();
-          Core.GameManager.currentScene = config.Scene.OVER;
+          Core.GameManager.currentScene = config.Scene.LEVEL2;
           
 
         }
@@ -150,7 +150,7 @@ private checkLives():void{
           this._player2 = null;
           Core.GameManager.Level1Winner = "Player1";
           this._tankSound.stop();
-          Core.GameManager.currentScene = config.Scene.OVER;
+          Core.GameManager.currentScene = config.Scene.LEVEL2;
           
         }
       }
