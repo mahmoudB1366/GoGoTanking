@@ -198,10 +198,10 @@ module scenes {
       Core.GameManager.P1Tank = this._player1;
       Core.GameManager.P2Tank = this._player2;
       this._player1.x = 40;
-      this._player1.y = 240;
+      this._player1.y = 340;
   
       this._player2.x = 600;
-      this._player2.y = 240;
+      this._player2.y = 340;
   }
   
   private defineObstacles():void{
@@ -224,14 +224,14 @@ module scenes {
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(315,395,"wood");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(325,85,"wood");
     
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,265,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,215,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(75,265,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(565,265,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(190,265,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(450,215,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(240,265,"water");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(400,215,"water");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,265,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,215,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(75,265,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(565,265,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(190,265,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(450,215,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(240,265,"house");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(400,215,"house");
 
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,215,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,265,"grass");
@@ -305,9 +305,7 @@ module scenes {
         // add the Players to the scene
         this.addChild(this._player1);
         this.addChild(this._player2);
-        this.addChild(this._p1Label);
-        this.addChild(this._p2Label);
-        this.addChild(this._timerLabel);
+
         this.loadbstacles();
   
         this.addChild(this._star);
@@ -317,6 +315,9 @@ module scenes {
   
         this.addChild(this._player1.Bullet);
         this.addChild(this._player2.Bullet);
+        this.addChild(this._p1Label);
+        this.addChild(this._p2Label);
+        this.addChild(this._timerLabel);
         Core.GameManager.playScene = this;
   
       }

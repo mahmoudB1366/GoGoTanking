@@ -29,6 +29,7 @@ module managers {
 
                 break;
               case "stone":
+              case "house":
                 createjs.Sound.play("explosion");
                 break;
               case "wood":
@@ -111,6 +112,7 @@ module managers {
               case "stone":
               case "wood":
               case "sea":
+              case "house":
               case enemyName:
               this.forceOut(itSelf, objects[i]);
                //Customize if required

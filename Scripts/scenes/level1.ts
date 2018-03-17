@@ -306,9 +306,7 @@ this.defineObstacles();
       // add the Players to the scene
       this.addChild(this._player1);
       this.addChild(this._player2);
-      this.addChild(this._p1Label);
-      this.addChild(this._p2Label);
-      this.addChild(this._timerLabel);
+
       this.loadbstacles();
 
       this.addChild(this._star);
@@ -318,6 +316,9 @@ this.defineObstacles();
 
       this.addChild(this._player1.Bullet);
       this.addChild(this._player2.Bullet);
+      this.addChild(this._p1Label);
+      this.addChild(this._p2Label);
+      this.addChild(this._timerLabel);
       Core.GameManager.playScene = this;
 
     }

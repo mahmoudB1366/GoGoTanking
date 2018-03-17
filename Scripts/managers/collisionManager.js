@@ -29,6 +29,7 @@ var managers;
                                     Core.GameManager.P1Health = 0;
                                 break;
                             case "stone":
+                            case "house":
                                 createjs.Sound.play("explosion");
                                 break;
                             case "wood":
@@ -103,6 +104,7 @@ var managers;
                             case "stone":
                             case "wood":
                             case "sea":
+                            case "house":
                             case enemyName:
                                 this.forceOut(itSelf, objects[i]);
                                 //Customize if required

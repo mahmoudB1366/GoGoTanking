@@ -38,7 +38,7 @@
         { id: "health", src: "./Assets/images/health.png" },
         { id: "range", src: "./Assets/images/range.png" },
         { id: "grass", src: "./Assets/images/grass.png" },
-        { id: "water", src: "./Assets/images/sea.png" }
+        { id: "house", src: "./Assets/images/house.png" }
     ];
     // preloads assets
     function Init() {
