@@ -197,42 +197,52 @@ module scenes {
       this._player2.name = "Player2";
       Core.GameManager.P1Tank = this._player1;
       Core.GameManager.P2Tank = this._player2;
-      this._player1.x = 40;
-      this._player1.y = 340;
+      this._player1.x = 25;
+      this._player1.y = 455;
   
-      this._player2.x = 600;
-      this._player2.y = 340;
+      this._player2.x = 615;
+      this._player2.y = 25;
   }
   
   private defineObstacles():void{
     let _obstacleCounter : number = 0;
     this._obstacles = new Array<base.GameObject>();
+
+    // Rock - four corners
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(90,390,"stone");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(550,90,"stone");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(90,90,"stone");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(550,390,"stone");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(155,210,"stone");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(485,430,"stone");
+
+    // Rock - non-starting quadrants
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(95,90,"stone");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(545,390,"stone");
+
+    // Rock - horizontal middle of top
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(300,25,"stone");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(340,455,"stone");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(350,25,"stone");
+
+    // Rock - horizontal middle of bottom
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(340,455,"stone");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(290,455,"stone");
 
-
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,330,"wood");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(270,310,"wood");
+    // Wood - constricting horizontal movement
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,150,"wood");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,330,"wood");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(315,395,"wood");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(325,85,"wood");
     
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,265,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,215,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(75,265,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(565,265,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(190,265,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(450,215,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(240,265,"house");
-    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(400,215,"house");
+    // Water - fragmented river through center
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,265,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,215,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(75,265,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(565,215,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(190,265,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(450,215,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(240,265,"sea");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(400,215,"sea");
 
+    // Grass - across the water, middle of left and right
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(25,215,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,265,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(65,215,"grass");
@@ -241,7 +251,11 @@ module scenes {
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(615,305,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(65,175,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(575,305,"grass");
+    // fill gaps
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(45,195,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(595,285,"grass");
     
+    // Grass - adjacent to top & bottom obstacles
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(250,25,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(390,455,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,25,"grass");
@@ -252,6 +266,9 @@ module scenes {
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,415,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(275,75,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(365,405,"grass");
+    // fill gaps
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(230,45,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(410,435,"grass");
   
   
   }

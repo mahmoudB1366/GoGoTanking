@@ -244,6 +244,8 @@ module scenes {
     // fill gaps
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(45,335,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(45,375,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(85,335,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(85,375,"grass");
 
     // Grass - horizontal area, bottom left corner
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(85,415,"grass");
@@ -255,6 +257,8 @@ module scenes {
     // fill gaps
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(105,435,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145,435,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(105,395,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145,395,"grass");
 
     // Grass - connecting triangle, bottom left corner
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(105,315,"grass");
@@ -274,6 +278,8 @@ module scenes {
     // fill gaps
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(595,145,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(595,105,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(555,145,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(555,105,"grass");
 
     // Grass - horizontal area, top right corner
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(555,65,"grass");
@@ -285,6 +291,8 @@ module scenes {
     // fill gaps
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(535,45,"grass");
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495,45,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(535,85,"grass");
+    this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495,85,"grass");
 
     // Grass - connecting triangle, top right corner
     this._obstacles[_obstacleCounter++] = new Levels.Obstacle(535,165,"grass");
