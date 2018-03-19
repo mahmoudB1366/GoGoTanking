@@ -102,7 +102,7 @@ var scenes;
                     this._player1 = null;
                     Core.GameManager.Level1Winner = "Player2";
                     this._tankSound.stop();
-                    Core.GameManager.currentScene = config.Scene.OVER;
+                    Core.GameManager.currentScene = config.Scene.LEVEL3;
                 }
             }
             if (this._player2 != null) {
