@@ -275,9 +275,9 @@ private loadbstacles():void{
       this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
       this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);
       this.setupTankTypes();
-      this._tankSound = createjs.Sound.play("tankMove");
+      this._tankSound = createjs.Sound.play("level1sd");
       this._tankSound.loop = -1;
-      this._tankSound.volume = 0.3;
+      this._tankSound.volume = 0.7;
 
       this._mine = new Levels.PopUp(5000,5000,"mine");
       this._star = new Levels.PopUp(5000,5000,"star");

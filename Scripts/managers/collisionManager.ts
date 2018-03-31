@@ -30,10 +30,10 @@ module managers {
                 break;
               case "stone":
               case "house":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("explosion3");
                 break;
               case "wood":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("explosion2");
                 objects[i].Life -= 35;
                 break;
                 case "mine":
@@ -43,7 +43,7 @@ module managers {
                 objects[i].IsColliding = false;
                 break;
                 case "star":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("starsd");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
@@ -53,7 +53,7 @@ module managers {
               Core.GameManager.P2Tank.TankSpeed += 0.2;
                 break;
                 case "health":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("powerup");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
@@ -63,7 +63,7 @@ module managers {
               Core.GameManager.P2Health =100;
                 break;
                 case "range":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("rangesd");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
@@ -127,7 +127,7 @@ module managers {
                 break;
 
                 case "star":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("starsd");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
@@ -137,7 +137,7 @@ module managers {
               Core.GameManager.P2Tank.TankSpeed += 0.2;
                 break;
                 case "health":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("powerup");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
@@ -147,7 +147,7 @@ module managers {
               Core.GameManager.P2Health =100;
                 break;
                 case "range":
-                createjs.Sound.play("explosion");
+                createjs.Sound.play("rangesd");
                 objects[i].x = 5000;
                 objects[i].y = 5000;
                 objects[i].IsColliding = false;
