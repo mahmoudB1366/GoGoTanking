@@ -25,7 +25,7 @@ module scenes {
 
     // Initialize Game Variables and objects
     public Start(): void {
-      this._overLabel = new base.Label("The Winner is: " + Core.GameManager.Level1Winner, "30px", "Consolas", "#e5e5e5", 320, 240, true);
+      this._overLabel = new base.Label("The Winner is: " + Core.GameManager.Level1Winner, "30px", "Impact", "#e5e5e5", 320, 240, true);
       this._backButton = new base.Button("backButton", 320, 340);
       this._background = new Levels.Background("gameOver");
       this.Main();

@@ -69,12 +69,12 @@ module scenes {
       Core.GameManager.Player2TankType = null;
      // this._selectionShadow = new base.Button("selection", 100, 100);
       this._background = new Levels.Background("start");
-      this._player1 = new base.Label("Player1:", "24px", "Consolas", "#000000", 100, 50, true);
+      this._player1 = new base.Label("Player1:", "24px", "Impact", "#000000", 100, 50, true);
       this._p1Heavy = new base.Button("p1heavy", 200, 100);
       this._p1Medium = new base.Button("p1medium", 300, 100);
       this._p1Light = new base.Button("p1light", 400, 100);
 
-      this._player2 = new base.Label("Player2:", "24px", "Consolas", "#000000", 100, 200, true);
+      this._player2 = new base.Label("Player2:", "24px", "Impact", "#000000", 100, 200, true);
       this._p2Heavy = new base.Button("p2heavy", 200, 250);
       this._p2Medium = new base.Button("p2medium", 300, 250);
       this._p2Light = new base.Button("p2light", 400, 250);

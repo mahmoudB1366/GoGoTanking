@@ -271,9 +271,9 @@ private loadbstacles():void{
       Core.GameManager.Timer = 90;
       this._frameCounter = 0;
       this._background = new Levels.Background("bg1");
-      this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Consolas", "#000000", 100, 15, true);
-      this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Consolas", "#000000", 600, 15, true);
-      this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Consolas", "#000000", 320, 15, true);
+      this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Impact", "#000000", 100, 15, true);
+      this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Impact", "#000000", 600, 15, true);
+      this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Impact", "#000000", 320, 15, true);
       this.setupTankTypes();
       this._tankSound = createjs.Sound.play("level1sd");
       this._tankSound.loop = -1;
