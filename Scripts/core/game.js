@@ -124,6 +124,7 @@
         }
     };
     assetManifest = [
+        //Buttons
         { id: "startButton", src: "./Assets/images/startButton.png" },
         { id: "backButton", src: "./Assets/images/backButton.png" },
         { id: "p1heavy", src: "./Assets/images/p1heavy.png" },
@@ -132,13 +133,13 @@
         { id: "p2heavy", src: "./Assets/images/p2heavy.png" },
         { id: "p2medium", src: "./Assets/images/p2medium.png" },
         { id: "p2light", src: "./Assets/images/p2light.png" },
-        { id: "bullet", src: "./Assets/images/bullet.png" },
-        { id: "selection", src: "./Assets/images/selection.png" },
+        //Backgrounds
         { id: "bg1", src: "./Assets/images/bg1.png" },
         { id: "bg2", src: "./Assets/images/bg2.png" },
         { id: "bg3", src: "./Assets/images/bg3.png" },
         { id: "start", src: "./Assets/images/start.png" },
         { id: "gameOver", src: "./Assets/images/gameover.png" },
+        //Sounds
         { id: "level1sd", src: "./Assets/audio/level1sd.mp3" },
         { id: "level2sd", src: "./Assets/audio/level2sd.mp3" },
         { id: "level3sd", src: "./Assets/audio/level3sd.mp3" },
@@ -148,17 +149,7 @@
         { id: "starsd", src: "./Assets/audio/starsd.wav" },
         { id: "rangesd", src: "./Assets/audio/rangesd.wav" },
         { id: "explosion2", src: "./Assets/audio/explosion2.wav" },
-        { id: "explosion3", src: "./Assets/audio/explosion3.wav" },
-        { id: "stone", src: "./Assets/images/stone.png" },
-        { id: "tree", src: "./Assets/images/tree.png" },
-        { id: "wood", src: "./Assets/images/wood.png" },
-        { id: "sea", src: "./Assets/images/sea.png" },
-        { id: "star", src: "./Assets/images/star.png" },
-        { id: "mine", src: "./Assets/images/mine.png" },
-        { id: "health", src: "./Assets/images/health.png" },
-        { id: "range", src: "./Assets/images/range.png" },
-        { id: "grass", src: "./Assets/images/grass.png" },
-        { id: "house", src: "./Assets/images/house.png" }
+        { id: "explosion3", src: "./Assets/audio/explosion3.wav" }
     ];
     // preloads assets
     function Init() {
