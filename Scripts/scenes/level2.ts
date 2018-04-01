@@ -114,8 +114,6 @@ module scenes {
       }
       this._frameCounter =0;
     }
-    console.log("P1:"+"Player1: " + Core.GameManager.P1Health);
-    console.log("P2:"+"Player2: " + Core.GameManager.P2Health);
     this._p1Label.SetText("Player1: " + Core.GameManager.P1Health);
     this._p2Label.SetText("Player2: " + Core.GameManager.P2Health);
     
@@ -135,7 +133,7 @@ module scenes {
           {
             this.removeChild(this._player1);
             this._player1 = null;
-            Core.GameManager.Level1Winner = "Player2";
+            Core.GameManager.Level2Winner = "Player2";
             this._tankSound.stop();
             Core.GameManager.currentScene = config.Scene.LEVEL3;
             
@@ -149,7 +147,7 @@ module scenes {
           {
             this.removeChild(this._player2);
             this._player2 = null;
-            Core.GameManager.Level1Winner = "Player1";
+            Core.GameManager.Level2Winner = "Player1";
             this._tankSound.stop();
             Core.GameManager.currentScene = config.Scene.LEVEL3;
             
@@ -271,8 +269,6 @@ module scenes {
         Core.GameManager.Timer = 90;
         this._frameCounter = 0;
         this._background = new Levels.Background("bg2");
-        console.log("S-P1:"+"Player1: " + Core.GameManager.P1Health);
-        console.log("S-P2:"+"Player2: " + Core.GameManager.P2Health);
         this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Impact", "#000000", 20, 15, false);
         this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Impact", "#000000", 540, 15, false);
         this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Impact", "#000000", 320, 15, true);

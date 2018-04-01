@@ -134,7 +134,7 @@ module scenes {
           {
             this.removeChild(this._player1);
             this._player1 = null;
-            Core.GameManager.Level1Winner = "Player2";
+            Core.GameManager.Level3Winner = "Player2";
             this._tankSound.stop();
             Core.GameManager.currentScene = config.Scene.OVER;
             
@@ -148,7 +148,7 @@ module scenes {
           {
             this.removeChild(this._player2);
             this._player2 = null;
-            Core.GameManager.Level1Winner = "Player1";
+            Core.GameManager.Level3Winner = "Player1";
             this._tankSound.stop();
             Core.GameManager.currentScene = config.Scene.OVER;
             
