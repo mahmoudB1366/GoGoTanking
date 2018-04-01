@@ -302,8 +302,8 @@ module scenes {
         Core.GameManager.Timer = 90;
         this._frameCounter = 0;
         this._background = new Levels.Background("bg3");
-        this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Impact", "#000000", 100, 15, true);
-        this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Impact", "#000000", 600, 15, true);
+        this._p1Label = new base.Label("Player1: " + Core.GameManager.P1Health, "16px", "Impact", "#000000", 20, 15, false);
+        this._p2Label = new base.Label("Player2: " + Core.GameManager.P2Health, "16px", "Impact", "#000000", 540, 15, false);
         this._timerLabel = new base.Label("|" + Core.GameManager.Timer + "|", "16px", "Impact", "#000000", 320, 15, true);
         this.setupTankTypes();
         this._tankSound = createjs.Sound.play("level3sd");
