@@ -16,7 +16,6 @@ var managers;
                         objects[i].IsColliding = true;
                         switch (objects[i].name) {
                             case enemyName:
-                                //createjs.Sound.play("yay");
                                 if (enemyName == "Player2")
                                     Core.GameManager.P2Health -= itSelf._power;
                                 if (Core.GameManager.Timer < 30)
@@ -28,21 +27,25 @@ var managers;
                                 break;
                             case "stone":
                             case "house":
-                                createjs.Sound.play("explosion3");
+                                this._sound = createjs.Sound.play("explosion3");
+                                this._sound.volume = 0.1;
                                 break;
                             case "wood":
-                                createjs.Sound.play("explosion2");
+                                this._sound = createjs.Sound.play("explosion2");
+                                this._sound.volume = 0.1;
                                 objects[i].Life -= 35;
                                 (objects[i].Life == 65) ? objects[i].gotoAndPlay("wood2") : objects[i].gotoAndPlay("wood3");
                                 break;
                             case "mine":
-                                createjs.Sound.play("explosion");
+                                this._sound = createjs.Sound.play("explosion");
+                                this._sound.volume = 0.1;
                                 objects[i].x = 5000;
                                 objects[i].y = 5000;
                                 objects[i].IsColliding = false;
                                 break;
                             case "star":
-                                createjs.Sound.play("starsd");
+                                this._sound = createjs.Sound.play("starsd");
+                                this._sound.volume = 0.1;
                                 objects[i].x = 5000;
                                 objects[i].y = 5000;
                                 objects[i].IsColliding = false;
@@ -52,7 +55,8 @@ var managers;
                                     Core.GameManager.P2Tank.TankSpeed += 0.2;
                                 break;
                             case "health":
-                                createjs.Sound.play("powerup");
+                                this._sound = createjs.Sound.play("powerup");
+                                this._sound.volume = 0.1;
                                 objects[i].x = 5000;
                                 objects[i].y = 5000;
                                 objects[i].IsColliding = false;
@@ -62,7 +66,8 @@ var managers;
                                     Core.GameManager.P2Health = 100;
                                 break;
                             case "range":
-                                createjs.Sound.play("rangesd");
+                                this._sound = createjs.Sound.play("rangesd");
+                                this._sound.volume = 0.1;
                                 objects[i].x = 5000;
                                 objects[i].y = 5000;
                                 objects[i].IsColliding = false;

@@ -277,7 +277,7 @@ private loadbstacles():void{
       this.setupTankTypes();
       this._tankSound = createjs.Sound.play("level1sd");
       this._tankSound.loop = -1;
-      this._tankSound.volume = 0.7;
+      this._tankSound.volume = 0.2;
 
       this._mine = new Levels.PopUp(5000,5000,"mine");
       this._star = new Levels.PopUp(5000,5000,"star");

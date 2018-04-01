@@ -149,7 +149,8 @@ var base;
             }
             else if (this.StartFire) {
                 if (this.Bullet.x == 10000) {
-                    createjs.Sound.play("fire");
+                    var sound = createjs.Sound.play("fire");
+                    sound.volume = 0.1;
                     this.fire();
                 }
             }
