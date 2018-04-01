@@ -15,8 +15,6 @@ module managers {
        || (math.Vec2.Distance(P1, P2) < (itSelf.HalfWidth + objects[i].HalfWidth))){
           if (!objects[i].IsColliding) {
             objects[i].IsColliding = true;
-            console.log("colide with :" + objects[i].name );
-            console.log("enemy Name :" +enemyName );
             switch (objects[i].name) {
               case enemyName:
                 //createjs.Sound.play("yay");
