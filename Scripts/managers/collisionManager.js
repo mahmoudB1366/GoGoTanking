@@ -33,6 +33,7 @@ var managers;
                             case "wood":
                                 createjs.Sound.play("explosion2");
                                 objects[i].Life -= 35;
+                                (objects[i].Life == 65) ? objects[i].gotoAndPlay("wood2") : objects[i].gotoAndPlay("wood3");
                                 break;
                             case "mine":
                                 createjs.Sound.play("explosion");

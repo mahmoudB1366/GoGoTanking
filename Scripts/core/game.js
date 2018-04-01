@@ -120,6 +120,12 @@
             },
             "wood": {
                 "frames": [38]
+            },
+            "wood2": {
+                "frames": [39]
+            },
+            "wood3": {
+                "frames": [40]
             }
         }
     };
