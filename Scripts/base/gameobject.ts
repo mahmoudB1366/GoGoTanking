@@ -21,17 +21,21 @@ module base {
   }
     // private methods
     protected _initialize():void {
-      this.Width = this.getBounds().width;
-      this.Height = this.getBounds().height;
-      this.HalfWidth = this.Width * 0.5;
-      this.HalfHeight = this.Height * 0.5;
-      this.regX = this.HalfWidth;
-      this.regY = this.HalfHeight;
+      this.UpdateProperties();
       this.IsColliding = false;
       this.onExplosion = false;
       this.Life = 100; // Different from tank's health value
     }
 
     // public methods
+    public UpdateProperties():void
+    {
+      this.Width = this.getBounds().width;
+      this.Height = this.getBounds().height;
+      this.HalfWidth = this.Width * 0.5;
+      this.HalfHeight = this.Height * 0.5;
+      this.regX = this.HalfWidth;
+      this.regY = this.HalfHeight;
+    }
   }
 }

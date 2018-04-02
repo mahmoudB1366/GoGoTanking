@@ -18,8 +18,7 @@
   textureAtlasData = {
 
     "images": [
-        
-        "./Assets/sprites/atlas.png"
+        ""
     ],
 
     "frames": [
@@ -150,6 +149,7 @@
     };
 
   assetManifest = [
+    {id: "atlas", src:"./Assets/sprites/atlas.png"},
     //Buttons
     {id: "startButton", src:"./Assets/images/startButton.png"},
     {id: "backButton", src:"./Assets/images/backButton.png"},
@@ -159,7 +159,7 @@
     {id: "p2heavy", src:"./Assets/images/p2heavy.png"},
     {id: "p2medium", src:"./Assets/images/p2medium.png"},
     {id: "p2light", src:"./Assets/images/p2light.png"},
-
+   
     //Backgrounds
     {id: "bg1", src:"./Assets/images/bg1.png"},
     {id: "bg2", src:"./Assets/images/bg2.png"},
@@ -191,7 +191,7 @@
 
   function Start():void {
     console.log("Starting Application...");
-    //textureAtlasData.images = [ assetManager.getResult("textureAtlas") ];
+    textureAtlasData.images = [ Core.GameManager.assetManager.getResult("atlas") ];
     textureAtlas = new createjs.SpriteSheet(textureAtlasData);
     stage = new createjs.Stage(canvas);
     stage.enableMouseOver(20); // turn this on for buttons
