@@ -198,52 +198,77 @@ module scenes {
     private defineObstacles(): void {
       let _obstacleCounter: number = 0;
       this._obstacles = new Array<base.GameObject>();
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130, 190, "stone");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130, 240, "stone");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130, 290, "stone");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510, 190, "stone");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510, 240, "stone");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510, 290, "stone");
-
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160, 400, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 400, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260, 400, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380, 80, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480, 400, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430, 400, "sea");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380, 400, "sea");
+      
+      // Left rock wall
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130,190,"stone");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130,240,"stone");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(130,290,"stone");
+  
+  // Right rock wall
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510,190,"stone");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510,240,"stone");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(510,290,"stone");
 
 
+  // Top left water
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160,80,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,80,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260,80,"sea");
 
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160, 130, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 130, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 155, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(180, 155, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145, 160, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160, 350, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 350, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210, 325, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(180, 325, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145, 320, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480, 130, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430, 130, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430, 325, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(460, 325, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495, 320, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430, 155, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(460, 155, "tree");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495, 160, "tree");
+  // Bottom left water
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160,400,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,400,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260,400,"sea");
+
+  // Top right water
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480,80,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,80,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380,80,"sea");
+
+  // Bottom right water
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480,400,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,400,"sea");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380,400,"sea");
 
 
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260, 130, "wood");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260, 350, "wood");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380, 130, "wood");
-      this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380, 350, "wood");
+  // Top left foliage
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(185,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,155,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(180,155,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145,140,"tree");
+
+  // Bottom left foliage
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(160,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(185,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(210,325,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(180,325,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(145,340,"tree");
+
+  // Top right foliage
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(455,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,130,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,155,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(460,155,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495,140,"tree");
+
+  // Bottom right foliage
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(480,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(455,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,350,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(430,325,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(460,325,"tree");
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(495,340,"tree");
+
+
+  // Wood walls
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260,130,"wood"); // top left
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(260,350,"wood"); // bottom left
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380,130,"wood"); // top right
+  this._obstacles[_obstacleCounter++] = new Levels.Obstacle(380,350,"wood"); // bottom right
 
 
     }
