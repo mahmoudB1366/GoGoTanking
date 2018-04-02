@@ -16,14 +16,22 @@ var managers;
                         objects[i].IsColliding = true;
                         switch (objects[i].name) {
                             case enemyName:
-                                if (enemyName == "Player2")
-                                    Core.GameManager.P2Health -= itSelf._power;
-                                if (Core.GameManager.Timer < 30)
-                                    Core.GameManager.P2Health = 0;
-                                if (enemyName == "Player1")
-                                    Core.GameManager.P1Health -= itSelf._power;
-                                if (Core.GameManager.Timer < 30)
-                                    Core.GameManager.P1Health = 0;
+                                if (enemyName == "Player2") {
+                                    if (Core.GameManager.Timer < 30 || Core.GameManager.P2Health <= itSelf._power) {
+                                        Core.GameManager.P2Health = 0;
+                                    }
+                                    else {
+                                        Core.GameManager.P2Health -= itSelf._power;
+                                    }
+                                }
+                                else if (enemyName == "Player1") {
+                                    if (Core.GameManager.Timer < 30 || Core.GameManager.P1Health <= itSelf._power) {
+                                        Core.GameManager.P1Health = 0;
+                                    }
+                                    else {
+                                        Core.GameManager.P1Health -= itSelf._power;
+                                    }
+                                }
                                 break;
                             case "stone":
                             case "house":

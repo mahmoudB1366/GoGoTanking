@@ -10,8 +10,7 @@ module scenes {
       private _frameCounter:number;
       private _popUpCounter:number;
       private _tankSound:createjs.AbstractSoundInstance;
-      private _obstacles :Array<base.GameObject>;
-  
+      private _obstacles :Array<base.GameObject>;  
       private _star:Levels.PopUp;
       private _health:Levels.PopUp;
       private _mine:Levels.PopUp;
@@ -126,48 +125,54 @@ module scenes {
       this._timerLabel.text = "|" + Core.GameManager.Timer + "|";
     }
   }
-  private checkLives():void{
-    if (this._player1 !=null)
-        {
-          this._player1.Update();
-          if (Core.GameManager.P1Health <= 0)
-          {
-            this.removeChild(this._player1);
-            this._player1 = null;
-            Core.GameManager.Level3Winner = "Player2";
-            this._tankSound.stop();
-            Core.GameManager.currentScene = config.Scene.OVER;
-            
-  
-          }
-        }
-        if (this._player2 !=null)
-        {
-          this._player2.Update();
-          if (Core.GameManager.P2Health <= 0)
-          {
-            this.removeChild(this._player2);
-            this._player2 = null;
-            Core.GameManager.Level3Winner = "Player1";
-            this._tankSound.stop();
-            Core.GameManager.currentScene = config.Scene.OVER;
-            
-          }
-        }
-        if (this._obstacles !=null)
-        if (this._obstacles.length > 0 )
-        {
-  for (let i:number =0;i< this._obstacles.length; ++i)
-  {
-    if(this._obstacles[i].Life < 1)
-    {
-      this.removeChild(this._obstacles[i]);
-      this._obstacles[i].x = 12000;
+
+  private checkLives(): void {
+    if (this._player1 != null) {
+      this._player1.Update();
+      if (Core.GameManager.P1Health <= 0 && !this._player1.onExplosion) {
+        this._player1.gotoAndPlay("explosion");
+        this._player1.onExplosion = true;
+       // this._player1.Life = 999;
+      }
+      if (this._player1.onExplosion && this._player1.paused)
+      {
+        this.removeChild(this._player1);
+        Core.GameManager.Level3Winner = "Player2";
+        this._tankSound.stop();
+        Core.GameManager.currentScene = config.Scene.OVER;
+        this._player1 = null;
+      }
     }
-  
-  }
+    if (this._player2 != null) {
+      this._player2.Update();
+      if (Core.GameManager.P2Health <= 0 && !this._player2.onExplosion) {
+        this._player2.gotoAndPlay("explosion");
+        this._player2.onExplosion = true;
+      }
+      if (this._player2.onExplosion && this._player2.paused)
+      {
+        this.removeChild(this._player2);
+        Core.GameManager.Level3Winner = "Player1";
+        this._tankSound.stop();
+        Core.GameManager.currentScene = config.Scene.OVER;
+        this._player2 = null;
+      }
+
+    }
+    if (this._obstacles != null)
+      if (this._obstacles.length > 0) {
+        for (let i: number = 0; i < this._obstacles.length; ++i) {
+          if (this._obstacles[i].Life < 1 && !this._obstacles[i].onExplosion) {
+            this._obstacles[i].gotoAndPlay("explosion");
+            this._obstacles[i].onExplosion = true;
+          }
+          if (this._obstacles[i].onExplosion && this._obstacles[i].paused)
+            {
+              this.removeChild(this._obstacles[i]);
+              this._obstacles[i].x = 12000;
+            }
         }
-  
+      }
   }
   
   private setupTankTypes():void{
@@ -298,7 +303,6 @@ module scenes {
   
       // Initialize Game Variables and objects
       public Start(): void {
-        
         Core.GameManager.Timer = 90;
         this._frameCounter = 0;
         this._background = new Levels.Background("bg3");
@@ -309,7 +313,7 @@ module scenes {
         this._tankSound = createjs.Sound.play("level3sd");
         this._tankSound.loop = -1;
         this._tankSound.volume = 0.2;
-          
+
         this._mine = new Levels.PopUp(5000,5000,"mine");
         this._star = new Levels.PopUp(5000,5000,"star");
         this._range = new Levels.PopUp(5000,5000,"range");
@@ -337,7 +341,6 @@ module scenes {
         // add the Players to the scene
         this.addChild(this._player1);
         this.addChild(this._player2);
-
         this.loadbstacles();
   
         this.addChild(this._star);

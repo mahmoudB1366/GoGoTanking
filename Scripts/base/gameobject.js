@@ -30,6 +30,7 @@ var base;
             this.regX = this.HalfWidth;
             this.regY = this.HalfHeight;
             this.IsColliding = false;
+            this.onExplosion = false;
             this.Life = 100; // Different from tank's health value
         };
         return GameObject;

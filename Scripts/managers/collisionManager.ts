@@ -18,11 +18,25 @@ module managers {
             switch (objects[i].name) {
               case enemyName:
                 if (enemyName == "Player2")
-                  Core.GameManager.P2Health -= (itSelf as base.Bullet)._power;
-                  if (Core.GameManager.Timer < 30) Core.GameManager.P2Health = 0;
-                if (enemyName == "Player1")
-                  Core.GameManager.P1Health -= (itSelf as base.Bullet)._power;
-                  if (Core.GameManager.Timer < 30) Core.GameManager.P1Health = 0;
+                { 
+                  if (Core.GameManager.Timer < 30 || Core.GameManager.P2Health <= (itSelf as base.Bullet)._power) 
+                  {
+                    Core.GameManager.P2Health = 0;
+                  } else
+                  {
+                    Core.GameManager.P2Health -= (itSelf as base.Bullet)._power;
+                  }
+                }
+                else if (enemyName == "Player1")
+                { 
+                  if (Core.GameManager.Timer < 30 || Core.GameManager.P1Health <= (itSelf as base.Bullet)._power) 
+                  {
+                    Core.GameManager.P1Health = 0;
+                  } else
+                  {
+                    Core.GameManager.P1Health -= (itSelf as base.Bullet)._power;
+                  }
+                }
 
                 break;
               case "stone":

@@ -65,8 +65,7 @@ var base;
         };
         //fires the bullet
         Tank.prototype.fire = function () {
-            this.Bullet.x = this.x;
-            this.Bullet.y = this.y;
+            this.Bullet.Fire(this.x, this.y);
             this.Bullet._angel = this.rotation;
             this.Bullet._speed = this.BulletSpeed;
             this.Bullet._power = this.BulletPower;

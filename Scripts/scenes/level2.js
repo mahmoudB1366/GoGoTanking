@@ -97,28 +97,41 @@ var scenes;
         Level2Scene.prototype.checkLives = function () {
             if (this._player1 != null) {
                 this._player1.Update();
-                if (Core.GameManager.P1Health <= 0) {
+                if (Core.GameManager.P1Health <= 0 && !this._player1.onExplosion) {
+                    this._player1.gotoAndPlay("explosion");
+                    this._player1.onExplosion = true;
+                    // this._player1.Life = 999;
+                }
+                if (this._player1.onExplosion && this._player1.paused) {
                     this.removeChild(this._player1);
-                    this._player1 = null;
                     Core.GameManager.Level2Winner = "Player2";
                     this._tankSound.stop();
                     Core.GameManager.currentScene = config.Scene.LEVEL3;
+                    this._player1 = null;
                 }
             }
             if (this._player2 != null) {
                 this._player2.Update();
-                if (Core.GameManager.P2Health <= 0) {
+                if (Core.GameManager.P2Health <= 0 && !this._player2.onExplosion) {
+                    this._player2.gotoAndPlay("explosion");
+                    this._player2.onExplosion = true;
+                }
+                if (this._player2.onExplosion && this._player2.paused) {
                     this.removeChild(this._player2);
-                    this._player2 = null;
                     Core.GameManager.Level2Winner = "Player1";
                     this._tankSound.stop();
                     Core.GameManager.currentScene = config.Scene.LEVEL3;
+                    this._player2 = null;
                 }
             }
             if (this._obstacles != null)
                 if (this._obstacles.length > 0) {
                     for (var i = 0; i < this._obstacles.length; ++i) {
-                        if (this._obstacles[i].Life < 1) {
+                        if (this._obstacles[i].Life < 1 && !this._obstacles[i].onExplosion) {
+                            this._obstacles[i].gotoAndPlay("explosion");
+                            this._obstacles[i].onExplosion = true;
+                        }
+                        if (this._obstacles[i].onExplosion && this._obstacles[i].paused) {
                             this.removeChild(this._obstacles[i]);
                             this._obstacles[i].x = 12000;
                         }
