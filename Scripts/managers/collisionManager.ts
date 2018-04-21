@@ -139,11 +139,16 @@ module managers {
                 break;
 
               case "mine":
+              if ((Core.GameManager.P1Health != 0)&&(Core.GameManager.P2Health != 0))
+              {
+               this._sound = createjs.Sound.play("explosion");
+               this._sound.volume = 0.1; 
+              }
               if (enemyName == "Player2")
               Core.GameManager.P1Health = 0;
               if (enemyName == "Player1")
                Core.GameManager.P2Health = 0;
-                          
+     
                 break;
 
                 case "star":
