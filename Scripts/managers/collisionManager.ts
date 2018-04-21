@@ -37,7 +37,8 @@ module managers {
                     Core.GameManager.P1Health -= (itSelf as base.Bullet)._power;
                   }
                 }
-
+                this._sound = createjs.Sound.play("explosion");
+                this._sound.volume = 0.1;
                 break;
               case "stone":
               case "house":
