@@ -138,7 +138,8 @@ module scenes {
         this.removeChild(this._player1);
         Core.GameManager.Level2Winner = "Player2";
         this._tankSound.stop();
-        Core.GameManager.currentScene = config.Scene.LEVEL3;
+        Core.GameManager.transferTarget = config.Scene.LEVEL3;
+        Core.GameManager.currentScene = config.Scene.TRANSFER;
         this._player1 = null;
       }
     }
@@ -153,7 +154,8 @@ module scenes {
         this.removeChild(this._player2);
         Core.GameManager.Level2Winner = "Player1";
         this._tankSound.stop();
-        Core.GameManager.currentScene = config.Scene.LEVEL3;
+        Core.GameManager.transferTarget = config.Scene.LEVEL3;
+        Core.GameManager.currentScene = config.Scene.TRANSFER;
         this._player2 = null;
       }
 

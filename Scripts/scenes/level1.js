@@ -105,7 +105,8 @@ var scenes;
                     this.removeChild(this._player1);
                     Core.GameManager.Level1Winner = "Player2";
                     this._tankSound.stop();
-                    Core.GameManager.currentScene = config.Scene.LEVEL2;
+                    Core.GameManager.transferTarget = config.Scene.LEVEL2;
+                    Core.GameManager.currentScene = config.Scene.TRANSFER;
                     this._player1 = null;
                 }
             }
@@ -119,7 +120,8 @@ var scenes;
                     this.removeChild(this._player2);
                     Core.GameManager.Level1Winner = "Player1";
                     this._tankSound.stop();
-                    Core.GameManager.currentScene = config.Scene.LEVEL2;
+                    Core.GameManager.transferTarget = config.Scene.LEVEL2;
+                    Core.GameManager.currentScene = config.Scene.TRANSFER;
                     this._player2 = null;
                 }
             }
