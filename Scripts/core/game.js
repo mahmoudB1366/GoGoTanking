@@ -158,6 +158,7 @@
         { id: "bg3", src: "./Assets/images/bg3.png" },
         { id: "start", src: "./Assets/images/start.png" },
         { id: "gameOver", src: "./Assets/images/gameover.png" },
+        { id: "labelBg", src: "./Assets/images/labelBg.png" },
         //Sounds
         { id: "level1sd", src: "./Assets/audio/level1sd.mp3" },
         { id: "level2sd", src: "./Assets/audio/level2sd.mp3" },
